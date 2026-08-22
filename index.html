@@ -1,0 +1,1673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Viveins Technologies Pvt. Ltd. | Audiovisual Solutions for Modern Spaces</title>
+<meta name="description" content="Viveins Technologies Pvt. Ltd. delivers reliable, innovative audiovisual solutions for businesses, educational institutions, hospitality venues, auditoriums, museums and heritage spaces, from consultation and design to installation, programming, training and support."/>
+<meta property="og:title" content="Viveins Technologies Pvt. Ltd. | Audiovisual Solutions for Modern Spaces"/>
+<meta property="og:description" content="Reliable, innovative audiovisual solutions: consultation, system design, integration, installation, programming, training and support."/>
+<meta property="og:type" content="website"/>
+<meta property="og:image" content="logo-lockup.png"/>
+<meta name="theme-color" content="#0B1030"/>
+<link rel="icon" type="image/png" href="favicon.png"/>
+<link rel="apple-touch-icon" href="favicon.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet"/>
+<style>
+/* ═══════════════════════════════════════════════
+   DESIGN TOKENS
+   ═══════════════════════════════════════════════ */
+:root{
+  /* Color */
+  --ink:#101430;
+  --ink-soft:#3C4258;
+  --muted:#5B6274;
+  --bg:#FFFFFF;
+  --bg-soft:#F6F7FB;
+  --navy:#0B1030;
+  --navy-2:#12183D;
+  --line:#E5E8F0;
+  --line-navy:rgba(255,255,255,0.12);
+  --on-navy:rgba(255,255,255,0.74);
+  --on-navy-strong:#FFFFFF;
+
+  /* Brand accents (from logo) */
+  --blue:#1E6FD9;
+  --violet:#5B21C9;
+  --violet-deep:#4A10B5;
+  --magenta:#D80E80;
+  --accent:#5B21C9;
+  --accent-on-navy:#C9B4F4;
+  --grad-cta:linear-gradient(115deg,#4A10B5 0%,#8A14A8 55%,#D80E80 100%);
+
+  /* Shape & elevation */
+  --r-sm:10px;
+  --r-md:14px;
+  --r-lg:18px;
+  --shadow-1:0 1px 2px rgba(16,20,48,0.05),0 6px 20px rgba(16,20,48,0.06);
+  --shadow-2:0 2px 6px rgba(16,20,48,0.07),0 18px 44px rgba(16,20,48,0.10);
+
+  /* Type */
+  --font-display:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --font-body:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+
+  /* Layout */
+  --container:1240px;
+  --gutter:clamp(20px,4.5vw,32px);
+  --header-h:80px;
+  --section-y:clamp(64px,9vw,104px);
+}
+
+/* ═══════════════════════════════════════════════
+   BASE
+   ═══════════════════════════════════════════════ */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{
+  font-family:var(--font-body);
+  font-size:16px;line-height:1.65;
+  color:var(--ink);background:var(--bg);
+  overflow-x:hidden;
+  overflow-x:clip;
+}
+img{max-width:100%;display:block;}
+a{color:var(--accent);}
+ul{list-style:none;}
+button{font:inherit;background:none;border:0;cursor:pointer;color:inherit;}
+iframe{border:0;display:block;}
+:focus-visible{outline:2px solid var(--violet);outline-offset:3px;border-radius:4px;}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;}
+section{scroll-margin-top:calc(var(--header-h) + 12px);}
+
+.container{max-width:var(--container);margin:0 auto;padding-left:var(--gutter);padding-right:var(--gutter);}
+
+/* Typography scale */
+h1,h2,h3,h4{font-family:var(--font-display);color:inherit;letter-spacing:-0.015em;}
+h1{font-size:clamp(2.15rem,5.2vw,3.35rem);line-height:1.08;font-weight:800;}
+h2{font-size:clamp(1.6rem,3.1vw,2.3rem);line-height:1.15;font-weight:800;}
+h3{font-size:1.15rem;line-height:1.3;font-weight:700;}
+.lead{font-size:clamp(1rem,1.4vw,1.13rem);color:var(--muted);}
+
+/* Section header pattern */
+.sec-head{max-width:640px;margin-bottom:clamp(36px,5vw,56px);}
+.sec-head.center{margin-left:auto;margin-right:auto;text-align:center;}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--font-display);font-size:0.72rem;font-weight:700;
+  letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:14px;
+}
+.eyebrow::before{content:'';width:18px;height:2px;background:var(--magenta);border-radius:2px;}
+.sec-head p{margin-top:12px;color:var(--muted);}
+.on-dark .eyebrow{color:var(--accent-on-navy);}
+.on-dark .sec-head p{color:var(--on-navy);}
+
+/* Buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  min-height:48px;padding:12px 26px;border-radius:var(--r-sm);
+  font-family:var(--font-display);font-size:0.95rem;font-weight:700;
+  text-decoration:none;white-space:nowrap;
+  transition:transform .18s ease,box-shadow .18s ease,background-color .18s ease,border-color .18s ease,filter .18s ease;
+}
+.btn svg{width:17px;height:17px;flex-shrink:0;}
+.btn-primary{
+  background:var(--grad-cta);color:#fff;
+  box-shadow:0 8px 22px rgba(122,16,150,0.28);
+}
+.btn-primary:hover{filter:brightness(1.07);transform:translateY(-1px);box-shadow:0 12px 28px rgba(122,16,150,0.34);}
+.btn-secondary{
+  background:var(--bg);color:var(--ink);
+  border:1px solid #CBD1DE;
+}
+.btn-secondary:hover{border-color:var(--violet);color:var(--violet);transform:translateY(-1px);}
+.btn-on-dark{
+  background:rgba(255,255,255,0.07);color:#fff;
+  border:1px solid rgba(255,255,255,0.28);
+}
+.btn-on-dark:hover{background:rgba(255,255,255,0.14);transform:translateY(-1px);}
+.btn-white{background:#fff;color:var(--violet-deep);box-shadow:0 10px 26px rgba(0,0,0,0.22);}
+.btn-white:hover{transform:translateY(-1px);filter:brightness(0.97);}
+
+/* Text link with arrow */
+.link-arrow{
+  display:inline-flex;align-items:center;gap:7px;
+  font-family:var(--font-display);font-weight:700;font-size:0.92rem;
+  color:var(--violet);text-decoration:none;min-height:44px;
+}
+.link-arrow svg{width:15px;height:15px;transition:transform .18s ease;}
+.link-arrow:hover svg{transform:translateX(3px);}
+.on-dark .link-arrow{color:var(--accent-on-navy);}
+
+/* Icon tile */
+.icon-tile{
+  width:44px;height:44px;border-radius:12px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,rgba(74,16,181,0.10),rgba(216,14,128,0.10));
+  color:var(--violet);
+}
+.icon-tile svg{width:22px;height:22px;}
+.on-dark .icon-tile{background:rgba(255,255,255,0.08);color:var(--accent-on-navy);}
+
+/* Reveal on scroll (motion-safe only) */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease;}
+.reveal.in{opacity:1;transform:none;}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{animation:none!important;transition:none!important;}
+  .reveal{opacity:1;transform:none;}
+}
+
+/* ═══════════════════════════════════════════════
+   HEADER
+   ═══════════════════════════════════════════════ */
+.site-header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  height:var(--header-h);
+  background:rgba(255,255,255,0.88);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid transparent;
+  transition:border-color .25s ease,box-shadow .25s ease,background-color .25s ease;
+}
+.site-header.scrolled{border-bottom-color:var(--line);box-shadow:0 4px 18px rgba(16,20,48,0.06);}
+.header-inner{
+  max-width:var(--container);margin:0 auto;height:100%;
+  padding:0 var(--gutter);
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
+}
+.brand{display:inline-flex;align-items:center;text-decoration:none;flex-shrink:0;}
+.brand img{height:52px;width:auto;}
+.main-nav ul{display:flex;align-items:center;gap:clamp(16px,2.1vw,30px);}
+.main-nav a{
+  font-family:var(--font-display);font-size:0.92rem;font-weight:600;
+  color:var(--ink-soft);text-decoration:none;padding:8px 2px;
+  border-bottom:2px solid transparent;
+  transition:color .18s ease;
+  white-space:nowrap;
+}
+.main-nav a:hover{color:var(--violet);}
+.header-cta{min-height:44px;padding:10px 20px;font-size:0.9rem;}
+.menu-btn{
+  display:none;width:44px;height:44px;border-radius:10px;
+  align-items:center;justify-content:center;color:var(--ink);
+}
+.menu-btn svg{width:24px;height:24px;}
+
+/* Mobile drawer */
+.drawer-backdrop{
+  position:fixed;inset:0;z-index:110;background:rgba(11,16,48,0.5);
+  opacity:0;pointer-events:none;transition:opacity .25s ease;
+}
+.drawer{
+  position:fixed;top:0;right:0;bottom:0;z-index:120;
+  width:min(360px,88vw);
+  background:#fff;border-left:1px solid var(--line);
+  display:flex;flex-direction:column;
+  transform:translateX(102%);transition:transform .28s ease;
+  overflow-y:auto;overscroll-behavior:contain;
+}
+body.menu-open .drawer{transform:none;}
+body.menu-open .drawer-backdrop{opacity:1;pointer-events:auto;}
+body.menu-open{overflow:hidden;}
+.drawer-head{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 20px;border-bottom:1px solid var(--line);min-height:64px;flex-shrink:0;
+}
+.drawer-head .brand img{height:36px;}
+.drawer-close{
+  width:44px;height:44px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;color:var(--ink);
+  background:var(--bg-soft);
+}
+.drawer-close svg{width:20px;height:20px;}
+.drawer-nav{padding:10px 8px;}
+.drawer-nav a{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:11px 14px;min-height:46px;border-radius:10px;
+  font-family:var(--font-display);font-size:1rem;font-weight:700;
+  color:var(--ink);text-decoration:none;
+}
+.drawer-nav a:hover{background:var(--bg-soft);color:var(--violet);}
+.drawer-nav a svg{width:16px;height:16px;color:#A6ADC0;flex-shrink:0;}
+.drawer-foot{margin-top:auto;padding:18px 20px 26px;border-top:1px solid var(--line);}
+.drawer-foot .btn{width:100%;margin-bottom:14px;}
+.drawer-foot p{font-size:0.85rem;color:var(--muted);line-height:1.6;}
+.drawer-foot a.mail{color:var(--violet);text-decoration:none;font-weight:600;word-break:break-all;}
+
+/* ═══════════════════════════════════════════════
+   HERO
+   ═══════════════════════════════════════════════ */
+.hero{
+  padding-top:calc(var(--header-h) + clamp(40px,6vw,76px));
+  padding-bottom:clamp(48px,6vw,84px);
+  background:
+    radial-gradient(46rem 26rem at 88% -10%,rgba(91,33,201,0.07),transparent 62%),
+    radial-gradient(34rem 22rem at -10% 108%,rgba(216,14,128,0.05),transparent 60%),
+    var(--bg-soft);
+  border-bottom:1px solid var(--line);
+}
+.hero-grid{
+  display:grid;grid-template-columns:1.04fr 0.96fr;
+  gap:clamp(36px,5vw,64px);align-items:center;
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--font-display);font-size:0.74rem;font-weight:700;
+  letter-spacing:0.13em;text-transform:uppercase;color:var(--violet);
+  background:#fff;border:1px solid var(--line);border-radius:999px;
+  padding:7px 14px;margin-bottom:22px;
+}
+.hero-eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--magenta);}
+.hero h1 .accent{
+  background:linear-gradient(100deg,var(--violet-deep),var(--magenta));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero .lead{margin-top:18px;max-width:520px;}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px;}
+.hero-proof{margin-top:32px;display:grid;gap:11px;}
+.hero-proof li{
+  display:flex;align-items:flex-start;gap:11px;
+  font-size:0.95rem;font-weight:500;color:var(--ink-soft);
+}
+.tick{
+  width:20px;height:20px;border-radius:50%;flex-shrink:0;margin-top:2px;
+  background:linear-gradient(135deg,var(--violet-deep),var(--magenta));
+  display:flex;align-items:center;justify-content:center;
+}
+.tick svg{width:10px;height:10px;stroke:#fff;stroke-width:2.6;fill:none;stroke-linecap:round;stroke-linejoin:round;}
+.hero-media{position:relative;}
+.hero-media .frame{
+  position:relative;border-radius:var(--r-lg);overflow:hidden;
+  box-shadow:var(--shadow-2);
+  aspect-ratio:4/3;background:var(--navy);
+}
+.hero-media .frame img{width:100%;height:100%;object-fit:cover;}
+.hero-media .caption{
+  position:absolute;left:0;right:0;bottom:0;
+  padding:40px 22px 16px;
+  background:linear-gradient(to top,rgba(11,16,48,0.86),rgba(11,16,48,0));
+  display:flex;align-items:center;gap:12px;
+}
+.hero-media .caption .cap-dot{
+  width:9px;height:9px;border-radius:50%;background:var(--magenta);flex-shrink:0;
+  box-shadow:0 0 0 4px rgba(216,14,128,0.25);
+}
+.hero-media .caption p{font-size:0.88rem;font-weight:600;color:#fff;line-height:1.45;}
+.hero-media .caption span{display:block;font-size:0.78rem;font-weight:400;color:rgba(255,255,255,0.72);}
+
+/* Capability strip */
+.cap-strip{background:var(--navy);}
+.cap-strip-inner{
+  max-width:var(--container);margin:0 auto;padding:20px var(--gutter);
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:center;
+  gap:14px 38px;
+}
+.cap-item{
+  display:inline-flex;align-items:center;gap:9px;
+  font-family:var(--font-display);font-size:0.83rem;font-weight:600;
+  letter-spacing:0.02em;color:var(--on-navy);white-space:nowrap;
+}
+.cap-item svg{width:16px;height:16px;stroke:var(--accent-on-navy);flex-shrink:0;}
+
+/* ═══════════════════════════════════════════════
+   BRANDS MARQUEE: partner tiles, two counter-scrolling rows
+   ═══════════════════════════════════════════════ */
+.brands{
+  padding:clamp(48px,6.5vw,76px) 0 clamp(52px,7vw,84px);
+  background:
+    radial-gradient(36rem 20rem at 50% -30%,rgba(91,33,201,0.06),transparent 65%),
+    var(--bg);
+  border-bottom:1px solid var(--line);
+  overflow:hidden;
+}
+.brands .sec-head{margin-bottom:clamp(28px,4vw,40px);}
+.brands-viewport{
+  overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
+}
+.brands-viewport + .brands-viewport{margin-top:16px;}
+.brands-track{display:flex;width:max-content;animation:brandScroll 44s linear infinite;}
+.brands-track.rev{animation-duration:52s;animation-direction:reverse;}
+.brands-viewport:hover .brands-track{animation-play-state:paused;}
+.brands-set{display:flex;align-items:stretch;gap:16px;padding-right:16px;}
+@keyframes brandScroll{to{transform:translateX(-50%);}}
+.brand-tile{
+  display:flex;align-items:center;gap:14px;
+  background:#fff;border:1px solid var(--line);border-radius:var(--r-md);
+  padding:16px 26px 16px 20px;min-width:300px;
+  box-shadow:0 1px 2px rgba(16,20,48,0.04);
+  transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease;
+}
+.brand-tile:hover{
+  transform:translateY(-3px);
+  border-color:#D8CBEF;
+  box-shadow:0 2px 6px rgba(16,20,48,0.06),0 14px 32px rgba(74,16,181,0.10);
+}
+/* Official partner logos, embedded as data URIs so they never 404 */
+.brand-logo{
+  width:140px;height:32px;flex-shrink:0;
+  background-repeat:no-repeat;background-position:left center;
+  transition:transform .22s ease;
+}
+.brand-tile:hover .brand-logo{transform:scale(1.03);}
+.bl-qsc{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg width='110' height='24' viewBox='0 0 110 24' xmlns='http://www.w3.org/2000/svg' role='img'%3E%3Cpath d='M109.76 2.2C109.71 2.31 109.65 2.42 109.57 2.51C109.48 2.59 109.39 2.66 109.28 2.71C109.16 2.76 109.04 2.79 108.91 2.79C108.78 2.79 108.66 2.76 108.54 2.71C108.43 2.66 108.33 2.59 108.25 2.51C108.17 2.42 108.11 2.31 108.06 2.2C108.02 2.08 107.99 1.95 107.99 1.81C107.99 1.68 108.02 1.55 108.06 1.43C108.11 1.32 108.17 1.21 108.25 1.12C108.33 1.03 108.43 0.96 108.54 0.92C108.66 0.86 108.78 0.84 108.91 0.84C109.04 0.84 109.16 0.86 109.28 0.92C109.39 0.97 109.48 1.04 109.57 1.12C109.65 1.21 109.71 1.32 109.76 1.43C109.8 1.55 109.83 1.68 109.83 1.81C109.83 1.95 109.81 2.08 109.76 2.2ZM109.92 1.37C109.86 1.23 109.78 1.11 109.69 1C109.59 0.9 109.47 0.82 109.34 0.76C109.2 0.71 109.06 0.68 108.9 0.68C108.75 0.68 108.61 0.71 108.47 0.76C108.33 0.82 108.22 0.91 108.12 1C108.03 1.1 107.95 1.23 107.89 1.37C107.83 1.51 107.81 1.66 107.81 1.81C107.81 1.97 107.83 2.12 107.89 2.26C107.95 2.39 108.03 2.52 108.12 2.62C108.22 2.72 108.33 2.8 108.47 2.86C108.61 2.92 108.75 2.95 108.9 2.95C109.06 2.95 109.2 2.92 109.34 2.86C109.47 2.8 109.58 2.72 109.69 2.62C109.78 2.52 109.86 2.39 109.92 2.26C109.97 2.12 110 1.97 110 1.81C110 1.66 109.97 1.51 109.92 1.37ZM108.83 1.75H108.62V1.29H108.91C108.95 1.29 108.99 1.29 109.02 1.3L109.12 1.34L109.19 1.41C109.19 1.41 109.21 1.47 109.21 1.52C109.21 1.57 109.2 1.62 109.17 1.65L109.09 1.72C109.06 1.73 109.01 1.74 108.97 1.74C108.92 1.74 108.88 1.74 108.83 1.74M109.17 1.85C109.21 1.83 109.24 1.81 109.27 1.78C109.3 1.75 109.32 1.71 109.34 1.67C109.35 1.63 109.36 1.58 109.36 1.52C109.36 1.4 109.33 1.32 109.26 1.25C109.2 1.19 109.09 1.16 108.95 1.16H108.47V2.47H108.62V1.88H108.88L109.23 2.47H109.42L109.04 1.88C109.08 1.88 109.12 1.87 109.16 1.84M30.22 15.76C30.22 16.33 29.78 16.78 29.24 16.78H27.47V14.66C27.47 14.43 27.23 14.41 27.23 14.41H20.99C20.75 14.41 20.74 14.69 20.74 14.69V16.78H9.28C8.74 16.78 8.3 16.33 8.3 15.76V5.58C8.3 5.02 8.74 4.56 9.28 4.56H29.24C29.78 4.56 30.22 5.02 30.22 5.58V15.76ZM34.82 2.51C34.67 2.25 34.48 2.03 34.27 1.83C34.06 1.63 33.83 1.46 33.57 1.32C33.31 1.17 33.02 1.05 32.72 0.96C32.41 0.86 32.09 0.79 31.73 0.75C31.38 0.7 31.01 0.68 30.61 0.68H5.39C5.06 0.68 4.57 0.76 4.13 0.9C3.7 1.04 3.32 1.23 2.98 1.47C2.64 1.71 2.35 2 2.08 2.31C1.82 2.63 1.59 2.98 1.38 3.36C1.18 3.74 1.01 4.15 0.85 4.59C0.7 5.02 0.57 5.48 0.47 5.96C0.36 6.44 0.27 6.95 0.2 7.47C0.13 7.99 0.08 8.53 0.05 9.09C0.02 9.65 0 10.23 0 10.82C0 10.82 0.02 11.99 0.05 12.55C0.08 13.11 0.13 13.65 0.2 14.18C0.27 14.7 0.36 15.2 0.47 15.68C0.57 16.16 0.7 16.62 0.85 17.05C1.01 17.49 1.18 17.9 1.38 18.28C1.59 18.66 1.82 19.01 2.08 19.33C2.35 19.65 2.64 19.93 2.98 20.17C3.32 20.41 3.7 20.6 4.13 20.74C4.57 20.88 5.06 20.97 5.67 20.97H20.83C20.83 20.97 20.83 22.88 20.83 23C20.83 23.35 21.1 23.32 21.1 23.32H27.26C27.26 23.32 27.54 23.35 27.54 23.01C27.54 22.85 27.54 20.97 27.54 20.97H30.88C31.15 20.97 31.51 20.92 31.72 20.9C32.07 20.85 32.4 20.78 32.71 20.68C33.02 20.59 33.3 20.47 33.56 20.33C33.82 20.18 34.05 20.02 34.26 19.82C34.47 19.62 34.66 19.39 34.81 19.14C34.96 18.88 35.08 18.59 35.17 18.27C35.25 17.95 35.3 17.58 35.3 17.16V4.48C35.3 4.07 35.25 3.7 35.17 3.37C35.08 3.05 34.96 2.76 34.81 2.51M71.23 12.4C71.15 12.03 71.04 11.69 70.92 11.37C70.79 11.04 70.64 10.75 70.46 10.48C70.29 10.21 70.09 9.97 69.85 9.76C69.62 9.55 69.36 9.37 69.06 9.22C68.77 9.07 68.45 8.96 68.09 8.88C67.73 8.8 67.34 8.76 66.9 8.76H47.44C47.11 8.76 46.84 8.48 46.84 8.13V5.43C46.84 5.08 47.11 4.8 47.44 4.8H70.4C70.82 4.8 71.16 4.45 71.16 4.01V1.47C71.16 1.03 70.82 0.68 70.4 0.68H42.28C41.84 0.68 41.45 0.72 41.09 0.79C40.73 0.87 40.41 0.99 40.12 1.13C39.82 1.28 39.56 1.46 39.33 1.67C39.1 1.88 38.9 2.12 38.72 2.39C38.55 2.66 38.4 2.96 38.27 3.28C38.14 3.6 38.04 3.94 37.96 4.31C37.87 4.68 37.82 5.07 37.78 5.48C37.74 5.9 37.72 6.33 37.72 6.78C37.72 7.23 37.74 7.67 37.78 8.08C37.82 8.49 37.87 8.88 37.96 9.24C38.04 9.61 38.14 9.95 38.27 10.28C38.4 10.6 38.54 10.89 38.72 11.16C38.9 11.43 39.1 11.67 39.33 11.88C39.56 12.09 39.82 12.28 40.12 12.42C40.41 12.57 40.73 12.69 41.09 12.76C41.45 12.84 41.84 12.88 42.28 12.88H61.73C62.07 12.88 62.34 13.16 62.34 13.51V16.37C62.34 16.72 62.07 17 61.73 17H38.78C38.36 17 38.02 17.35 38.02 17.79V20.17C38.02 20.61 38.36 20.97 38.78 20.97H66.9C67.34 20.97 67.73 20.92 68.09 20.85C68.45 20.77 68.77 20.65 69.06 20.51C69.36 20.36 69.61 20.18 69.85 19.97C70.08 19.76 70.28 19.52 70.46 19.25C70.64 18.98 70.79 18.68 70.92 18.36C71.05 18.05 71.15 17.7 71.23 17.33C71.31 16.96 71.37 16.57 71.41 16.16C71.45 15.75 71.46 15.32 71.46 14.87C71.46 14.42 71.45 13.98 71.41 13.57C71.37 13.16 71.31 12.77 71.23 12.4M106.51 0.68H79.31C78.74 0.68 78.25 0.75 77.8 0.89C77.36 1.02 76.98 1.21 76.63 1.44C76.29 1.68 75.99 1.96 75.72 2.28C75.46 2.59 75.22 2.95 75.02 3.33C74.82 3.71 74.64 4.12 74.49 4.56C74.34 5 74.21 5.46 74.11 5.94C74 6.43 73.92 6.93 73.85 7.46C73.79 7.99 73.74 8.53 73.71 9.09C73.68 9.65 73.67 10.23 73.67 10.83C73.67 11.43 73.68 12 73.71 12.56C73.74 13.13 73.79 13.67 73.85 14.19C73.92 14.72 74.01 15.22 74.11 15.71C74.21 16.2 74.34 16.66 74.49 17.1C74.64 17.54 74.82 17.95 75.02 18.33C75.22 18.71 75.45 19.06 75.72 19.38C75.99 19.69 76.29 19.97 76.63 20.21C76.98 20.44 77.36 20.64 77.8 20.77C78.24 20.9 78.74 20.98 79.31 20.98H106.51C106.84 20.98 107.11 20.7 107.11 20.34V17.55C107.11 17.2 106.84 16.92 106.51 16.92H82.76C82.43 16.92 82.16 16.64 82.16 16.29V5.37C82.16 5.02 82.43 4.73 82.76 4.73H106.51C106.84 4.73 107.11 4.45 107.11 4.1V1.31C107.11 0.96 106.84 0.68 106.51 0.68Z'%3E%3C/path%3E%3C/svg%3E");background-size:88px 19px;}
+.bl-bosch{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='433' height='97' viewBox='0 0 433 97'%3E%3Cpath d='M185.2,46.88a13.77,13.77,0,0,0,8.8-13c0-11.7-8.3-17.5-19.7-17.5H144.4V80h32.5c10,0,19.8-7,19.8-17.7C196.7,49.58,185.2,47,185.2,46.88ZM160,29.58h11.6a5.66,5.66,0,0,1,6,5.31q0,.34,0,.69a5.93,5.93,0,0,1-6,5.81H159.9Zm11.7,37.1H160.1V54.18h11.3c5.7,0,8.4,2.5,8.4,6.2C179.8,65,176.4,66.68,171.7,66.68Z' style='fill:%23ed0007;fill-rule:evenodd'%3E%3C/path%3E%3Cpath d='M231.1,14.78c-18.4,0-29.2,14.7-29.2,33.3s10.8,33.3,29.2,33.3,29.2-14.6,29.2-33.3S249.6,14.78,231.1,14.78Zm0,51.4c-9,0-13.5-8.1-13.5-18.1s4.5-18,13.5-18,13.6,8.1,13.6,18C244.7,58.18,240.1,66.18,231.1,66.18Z' style='fill:%23ed0007;fill-rule:evenodd'%3E%3C/path%3E%3Cpath d='M294.2,41.38l-2.2-.5c-5.4-1.1-9.7-2.5-9.7-6.4,0-4.2,4.1-5.9,7.7-5.9a17.86,17.86,0,0,1,13,5.9l9.9-9.8c-4.5-5.1-11.8-10-23.2-10-13.4,0-23.6,7.5-23.6,20,0,11.4,8.2,17,18.2,19.1l2.2.5c8.3,1.7,11.4,3,11.4,7,0,3.8-3.4,6.3-8.6,6.3-6.2,0-11.8-2.7-16.1-8.2l-10.1,10c5.6,6.7,12.7,11.9,26.4,11.9,11.9,0,24.6-6.8,24.6-20.7C314.3,46.08,303.3,43.28,294.2,41.38Z' style='fill:%23ed0007;fill-rule:evenodd'%3E%3C/path%3E%3Cpath d='M349.7,66.18c-7,0-14.3-5.8-14.3-18.5,0-11.3,6.8-17.6,13.9-17.6,5.6,0,8.9,2.6,11.5,7.1l12.8-8.5c-6.4-9.7-14-13.8-24.5-13.8-19.2,0-29.6,14.9-29.6,32.9,0,18.9,11.5,33.7,29.4,33.7,12.6,0,18.6-4.4,25.1-13.8L361.1,59C358.5,63.18,355.7,66.18,349.7,66.18Z' style='fill:%23ed0007;fill-rule:evenodd'%3E%3C/path%3E%3Cpolygon points='416.3 16.38 416.3 39.78 397 39.78 397 16.38 380.3 16.38 380.3 79.98 397 79.98 397 54.88 416.3 54.88 416.3 79.98 433 79.98 433 16.38 416.3 16.38' style='fill:%23ed0007;fill-rule:evenodd'%3E%3C/polygon%3E%3Cpath d='M48.2.18a48.2,48.2,0,1,0,48.2,48.2A48.2,48.2,0,0,0,48.2.18Zm0,91.9a43.7,43.7,0,1,1,43.7-43.7,43.71,43.71,0,0,1-43.7,43.7Z'%3E%3C/path%3E%3Cpath d='M68.1,18.28H64.8v16.5H31.7V18.28H28.3a36.06,36.06,0,0,0,0,60.2h3.4V62H64.8v16.5h3.3a36.05,36.05,0,0,0,0-60.2ZM27.1,72A31.59,31.59,0,0,1,24.47,27.4a32.51,32.51,0,0,1,2.63-2.62Zm37.7-14.6H31.7V39.28H64.8Zm4.5,14.5v-10h0V34.78h0v-10a31.65,31.65,0,0,1,2.39,44.71A33.68,33.68,0,0,1,69.3,71.88Z'%3E%3C/path%3E%3C/svg%3E");background-size:113px 25px;}
+.bl-crestron{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAAdCAMAAAB7eOLfAAAAOVBMVEX+/v7L2eVGeqINUoYASH4BSoAgX49xmLejvNHa5Ozq7/S0yNmPrseAo78wapdYhqsXWIp+ob7A0d//22xKAAAHf0lEQVRYw+VZ2ZbcKgw0i9mbxf//sVcCCYPbk4ebtwznJNPtRQipVCro4/hxCKm01ud5KiOt88dvGUFEl3C4KMIR4icrDAPEQpkSwy+IgEglK1ww5l/VLFv0QbR8djjAfzn+6yGIpZ4D/WP0UJjifIhFjeta2X8aDN4qyvdjnMaKEOU5oqBL+EMlRedcvPx8JDzHjzfum2TGRazHH58NP9smM/6Kq5XV0k/fr8xVYLIspVj4J7Pp2NC1iOAMYSS9BuBq0ijVHwAWbWJclfkxZLFILP7rBgwMLxZkHWagHo1M/gjl5dks0/el8uFq9W6agaoubizTrTOhe2SZVxQrrB8eT/ESV0RubK11gmzFQCBqCkJqRIM20CWE2+MeexvRdx1Vi70kKv09TumPeL7cKIDGepvR/RmTRH15Vmf7dnVUq2/mnHb6h8FlZbrgRqjIMgVBGJVt9F7E1kPYIYGjmpJcAkoA10PRDAV3FrFUUlErl4ypYalH2i/yPXu0lxs6+bw6TleVfLVRymJC3x9geTHrp3mtwOmQp1HZcxj7i1oRfq4kQogtD/SjKkgp4kg2q1ouZMYsgtRjDbA6fTeKzXciUHQTQ39T7EK4mcO5Z9Hx1bOaqvTKz8vr9NXm3Ta7UI6kXmbVNR7itjnWPXLUoU0rSXlg98wWawCLVkooD3/ZWt0RDfgOyByrg0xqcxEdSJ5U5QItlr9VMUNfYSg1HTWCbiizjJwUvZiEh1lniBS+Xtn/OkaqZGLY1gQHXRw50L2RdUahAHwXII3yGLDgEHzMaA1KugjJBwMJGTpZWSKQJkQOWKMdVg8k4OsQlP6u5fyVCy4Ex/MCvMdHwBCOq7F7Mo5P2ga/DAbCsDv5UMb+diZbVzfmE5dW/xrLDIJhK13Z+cLLNoEd1VQClCNcTy8OArTOTgA35QRmU/skoL9w2QSAB8cKeNeD6Q4/Zur0ctFKT1YQloPQ4uSAARn2L3FOtkYzcaOgGKGx9dY1GxgHtBz7LFSUkTtKHtHQ2e9Wdb2k3qHA5TFY0vE6iodwqBS8hRYEYnHMDyFNVRwfCEIcJZQWTNktf1hpk+iYF8csBwEV/OMVQMHRgAiiu5QLLAGTi03XbEIcUI7bWJGuY60zy5mWUq/jES0VOQedsWBBjspGUHvs188W4KOC+s/ZhW27lCQioSCVQFEQEHoQ/Jd88I6GKKNSlcVWawvFAChK6vNBjGWU6C5XIRY5URgooMzk7ELFPv6xeaQfGuda81u11kE5uhouAquX7DEM24Et2QK0MoTps6rJcsFVg0wH3WVye7pxyCl5xbdeCR66Soe23tsj9unv1oZVNoyVLfMT/pttVUTZwTdfhLU2+usoGEKuBcbBC8DzAA7oeA4cEmsQfEgVrlgkuVBoP9XLLj2r4R6X+lYDiIOxAr0CYSRYjM3LsM6ddtxiEpM7MHbb2fNjSjwzwcIClkk4JAqlAmPiwCLpdQ8mEoSctwAhiCRzCwFiIEUPYFeO14o29g6kPw3vxnNfns4V1DmYxgRUDWj10U314qRQG8ceRb8qKFH1A5cTMimzuXFpGhgF1iNC2mYEIUI80iG6zBepWducF2ClNp8M7aqlOF55sSkayervYuiTFuKmeLfHtYrwSIO37xwE7ifukd/NtDaR1QPzIqedb3VgbWKT4jUklustDMvBQECC7E1CWteFo2uywm4yOkkMZNLWEFHvzRYwFFz2VHOq4JCVFVVkzOZ9+5FoxNkS9Z0pu8OcM26GbRYgWXAH4K48ZUKK55SHUW3ylfsLcgHxlcUeBypGnhLUYkLJgnIOendPzzk4e6ZuNsSu86Il7QZBoWXwLG5GnleQ2zoMI8ZEFAckH1nUSr3hjRtmo6XOmmSEqII7oZTvpTaN7gx5uEAB1ht63SPVIQeY4X3nPwfAh02Vi9eFSMBaHTnGnVY4BJ+0+SkQUd4qxvBpjykLmSbZHXe+7By0mntHhXGfNZvWjsidr+1NIM38p80bNoL8JRdvVigk/2l9Cw5xhyCMMCJ/Y4HkFFMxuI80fXH9qAHKA/MNxVFubbRonLlpA/HzlEq8gYMVvLTCWs79SOtcz3C4EbcplYarYtcCqG31w0gHY5ws4h68qqAMWxqJiih6aVeF2yVs2bWgEml4vFKs/eBRg7iclQZCkmc9BPvshHDX3Z2dOarNbMn39lbu1jgN8Wle2kUyCfBZHfKO95fYACPFMxA5bNfEr/HJWbfod89d1oIuMGMDh2dB/XQFgiHpqKGfi9zD5e3shBgj0FGVCdzUSBt6o19PVIJ9nJ5AFuKxvcyd71K3zlym6o3EW3O+GEl0FvPwBoAZW0yrMqQOg6kMsLd+Of7pd2vblVHAoxgoGtD7sPskvR/SIDzWbpEIMInUXkbs2/lhplvafuhw9C7NK5aX+grbOpcHtJI7t5G4eyOWeaPbf0qIhgsJ0hliP1nb9S0eOF5vh4x9Vxz+9iwarHSh9beGxh79fxoR83AdZUFADjTqRoSqMolf8ANMtIbP3lVu0LP9BQ0S2RG4If6an+LwvFqdrIs+v+Gnt+M/oDGCW8gIqvoAAAAASUVORK5CYII=");background-size:140px 16px;}
+.bl-xilica{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 399.11 93.91'%3E%3Cpath d='M128,92.1H103V1.81h25ZM164.8,1.81h-25V92.1H200.4V70.17H164.8Zm68.38,0h-25V92.1h25ZM399.11,92.1H372.28l-6.45-16.25h-35l-2.11,0c-4.51,6.4-16.61,18-38.72,18-27.86,0-48.5-20.77-48.5-46.7V47C241.54,21,262.43,0,290.3,0a50.15,50.15,0,0,1,28.34,8.45l-14.06,19.3A22.21,22.21,0,0,0,290,22.57c-13.8,0-23,11.1-23,24.12V47c0,13,9.41,24.38,23.22,24.38,12,0,20.28-8.55,24.5-18.53S336.55,1.16,336.55,1.16h24.12ZM338.23,56.37h20.25L348.42,30.83ZM379.86,9.58A9.63,9.63,0,1,0,389.48,0,9.51,9.51,0,0,0,379.86,9.58Zm1.52,0a8.11,8.11,0,1,1,8.1,8.11A8.1,8.1,0,0,1,381.38,9.58Zm4.35,5.36h1.94V10.43h1.39l2.54,4.51H394l-2.91-4.72a2.88,2.88,0,0,0,2.49-2.92c0-2.32-2-3.16-4-3.16h-3.8Zm1.94-6.07V5.78h1.77c1,0,2.16.3,2.16,1.48s-1.27,1.61-2.37,1.61ZM52.11,71.77,66.34,92.1H97.46L67.67,49.55Zm-21,20.33H0L33.17,44.73,3.12,1.81H34.24L48.73,22.5,63.22,1.81H94.34Z'%3E%3C/path%3E%3C/svg%3E");background-size:85px 20px;}
+.bl-televic{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAAwCAMAAADASvQ3AAAALVBMVEX///++2W2mzjm41l+w00yqzj/M44ux0E2ozTmpzkDC23q41mLE3nnG34HM4IQwnlN2AAAAAXRSTlMAQObYZgAABGxJREFUaN7tmotu4yAQRW1zgZA0+/+fu4mxHRjmgR2lTdWMVuoqMh44DPPCw/B6GadZXq/IYVbkhzeU74MwvT2E8IEwTfED4Tcch5jlb0MYMcvfhpCDy+l3QwjjLH8bwrPygTBDwAfCxxJuERIvnOj7Q3CzYIEwOk0IOJfQSnKhE4Ljxifnjid8IU+TZjv+vj5GUyTnoEsQ24qNfQ7BhBAVvVhph2W+KpblmVHKE+SJIq0Lmg5B8Lc3a/igQzgb6FeKy6oudoI0j2Ag8Aiw4Y7HIVxM+yl3r4HgUU2FE1fai2YKKJ5vIThromPUIADl/7PEehG9ttBAUGeG8kg4xrBYQ+DTZmcf9kQhoNMS0ODJIlCgENymqfFW1JRW1yGZgq8Mh0Lw0yTMtNB0H/r1Nefba3RQ5Gus6d8doPehFO/jBv9xeCgELLxvHq8efhvvtpOSIV6K/ZIPA/gCaptKoyj4LSCCntLTjsTq4cRpnFpeDwFCzNmpdNIDKq+imkKofQaB4FdFQT1J8UjGuJpoMPqdEoS0KD/3+LohaF6BbCaFMOkTrfTshcBkDbWkKs5RCBbDlfIoTLU2BBSKCISkH6WV7yEIsDw2nUwNoTvsoX6+YyZEr4KvzJEcgb8Hwqg8okIwGZIBTlrLau6DDkHWc6ot5QiEa1FVXK+3f9sPl3qdvCXcioS2Opnfca0PzDogmmeaQDBpgxyX/RCW2Pv4uwYFLE55sxUWwkSSsfIvcWhCxtT+vBfCEi2fg/BIK8FlfTqEqYVA3hN0L7KkG+44hCeaKn11JwwIgJmvu0EzBebHH4FQL4SmzbpPUOoUUko+woVXPcIbWoJ1HDreEmhEh24IPwABphiO0ZSgbLtvrOUnIKC/C7Y7T5ALCj1ZeS0En6XSH78TQl4fJldCAc0d9kLw1bq27Q0dWcWzEKBn9F32x2fEeyHEeiVxPwRnND9HXI9CcHOHYwxiRPTQ0ifPlSAdEIyVVUn2pYswrLQ59vUNWVMQZstDkHcrkJkkrSqqN8+ZpbTTQuQZnTk9KbaLlzphsnwBNVpHLJLxfAen7nHFJZ25WE4Aaj8BwWpYsNel9+2XOhIEgjNMwdPdjJPcM7sQ6wPTVqedJYil9NZnFYOsYCrrnM9iC7ptr+WYF6Lax2PyQDgf6pbhNDWrKBqYZBeD3573SqM1d1qDpyCCf3RqpRpebDvSRmsq1hTp1dz6mtKzlCk9TpsU6S3YxBnTqRQwz8stdzr6Nv7xZs9vnchIbbkDJ2GeXOItZvWF9XrwNVM9OoiXL2NXGapXLbDbelvNsUPPCPVWKDBeQqmGC+fSQAiw6ycop1gK5u01nI078a1y/aY4y9VaROn72wtZn2STy9Y1arFXCrDchaxx35cY0tK8Gk/um2u36nlnXc2rt4SAcVUghD3uaj6oitjXzB9eUACJD7TzNxZtnyw1n2m4NAunihkP7SsNpxnCELKi2F6JgdnX5JSkNRIZ+h/d+VFs3D/+X5adH4sbev4D4GY0ihEf56QAAAAASUVORK5CYII=");background-size:103px 19px;}
+.bl-shure{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1' width='956.69' height='227.83' %3E%3Cdefs /%3E%3Cg transform='translate(1490.71,645.58)' %3E%3Cg transform='translate(35.43,35.36)' %3E%3Cpath d='M -1051.48,-644.43 L -1063.02,-550.65 L -1080.75,-550.65 L -1069.05,-644.43 L -1136.14,-644.43 L -1144.31,-579.57 C -1145.21,-570.67 -1146.87,-554.79 -1143.34,-543.71 C -1135.49,-518.88 -1114.68,-509.99 -1114.68,-509.99 L -1112.24,-508.67 C -1103.53,-504.21 -1093.53,-502.77 -1084.5,-502.77 L -1078.25,-502.77 C -1061.61,-502.82 -1048.04,-506.49 -1036.97,-512.04 C -1036.94,-512.1 -1036.29,-512.32 -1036.29,-512.32 C -1032.68,-514.47 -1012.16,-525.08 -999.39,-550.17 C -994.65,-559.65 -994.27,-561.66 -991.62,-576.97 L -983.4,-644.43' style='fill:%23000000;fill-opacity:1;fill-rule:nonzero;stroke:none' /%3E%3Cpath d='M -1257.35,-508.62 L -1251.51,-556.23 L -1231.24,-556.23 L -1230.86,-556.44 L -1236.74,-508.62 L -1170.92,-508.62 L -1154.25,-644.44 L -1220.07,-644.44 L -1225.84,-597.38 L -1225.96,-597.43 L -1246.31,-597.43 L -1246.5,-597.38 L -1240.77,-644.44 L -1306.6,-644.44 L -1323.2,-508.62 L -1257.35,-508.62' style='fill:%23000000;fill-opacity:1;fill-rule:nonzero;stroke:none' /%3E%3Cpath d='M -619.97,-638.54 L -619.97,-633.81 L -617.65,-633.81 C -615.17,-633.81 -614.03,-634.38 -614.03,-636.08 C -614.03,-637.86 -615.17,-638.54 -617.73,-638.54 L -619.97,-638.54 z M -611.22,-636.36 C -611.22,-634.32 -612.45,-632.91 -614.53,-632.49 L -611.32,-625.91 L -614.37,-625.91 L -617.27,-632.09 L -619.97,-632.09 L -619.97,-625.91 L -622.67,-625.91 L -622.67,-640.35 L -617.27,-640.35 C -613.23,-640.35 -611.22,-638.97 -611.22,-636.36 z M -609.71,-640.64 C -611.82,-642.77 -614.53,-643.93 -617.54,-643.93 C -620.52,-643.93 -623.21,-642.79 -625.23,-640.75 C -627.36,-638.57 -628.58,-635.78 -628.58,-632.88 C -628.58,-630.01 -627.42,-627.26 -625.32,-625.16 C -623.25,-623.04 -620.49,-621.87 -617.65,-621.87 C -614.68,-621.87 -611.97,-623.01 -609.74,-625.13 C -607.66,-627.13 -606.57,-629.83 -606.57,-632.77 C -606.57,-635.85 -607.64,-638.57 -609.71,-640.64 z M -608.53,-641.77 C -606.2,-639.42 -604.88,-636.25 -604.88,-632.88 C -604.88,-629.4 -606.15,-626.26 -608.56,-623.97 C -611.08,-621.53 -614.27,-620.18 -617.56,-620.18 C -620.98,-620.18 -624.11,-621.53 -626.52,-624.01 C -628.93,-626.44 -630.24,-629.54 -630.24,-632.88 C -630.24,-636.23 -628.84,-639.46 -626.39,-642 C -624.06,-644.34 -621.03,-645.58 -617.56,-645.58 C -614.16,-645.58 -610.99,-644.25 -608.53,-641.77' style='fill:%23000000;fill-opacity:1;fill-rule:nonzero;stroke:none' /%3E%3Cpath d='M -658.29,-544.33 L -737.96,-544.39 L -735.5,-562.4 L -656.04,-562.4 L -651.8,-597.02 L -730.76,-596.96 L -728.53,-613.27 L -649.81,-613.27 L -645.99,-644.46 L -792.11,-644.46 L -804.56,-543.13 L -854.54,-568.61 C -854.54,-568.61 -840.75,-572.55 -833.2,-577.8 C -825.34,-583.32 -822.03,-588.79 -820.55,-591.34 C -817.77,-596.02 -814.75,-601.47 -814.41,-611.71 C -814.04,-622.25 -819.59,-629.81 -822.56,-633.27 C -825.55,-636.85 -832.89,-644.59 -845.82,-644.43 L -965.4,-644.43 L -969.25,-613.75 L -874.58,-613.75 L -876.84,-597.18 L -971.21,-597.18 L -982.11,-508.63 L -924.64,-508.63 L -919.04,-553.59 L -811.1,-488.47 L -808.71,-508.59 L -662.66,-508.59 L -658.29,-544.33' style='fill:%23000000;fill-opacity:1;fill-rule:nonzero;stroke:none' /%3E%3Cpath d='M -1440.18,-644.45 C -1448.96,-644.42 -1456.75,-641.4 -1463,-636.5 L -1463.3,-636.44 C -1463.38,-636.44 -1463.38,-636.5 -1463.38,-636.5 L -1463.38,-636.44 C -1483.34,-620.88 -1487.66,-586.76 -1459.34,-572.74 C -1455.56,-570.93 -1392.97,-545.53 -1392.97,-545.53 L -1392.85,-545.45 L -1486.17,-545.43 L -1490.71,-508.52 L -1376.1,-508.57 C -1358.66,-508.56 -1346.63,-515.17 -1338.32,-526.94 C -1335.32,-530.96 -1333.3,-534.96 -1331.96,-539.03 C -1327.61,-551.84 -1328.45,-566.4 -1337.1,-573.41 C -1338.97,-574.85 -1340.56,-576.17 -1342.28,-577.18 C -1343.45,-577.87 -1345.4,-579.09 -1347.08,-579.92 C -1361.96,-586.94 -1425.56,-613.86 -1425.56,-613.86 L -1327.18,-613.91 L -1323.41,-644.42 L -1440.18,-644.45' style='fill:%23000000;fill-opacity:1;fill-rule:nonzero;stroke:none' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");background-size:101px 19px;}
+.brand-cat{
+  padding-left:14px;border-left:1px solid var(--line);
+  font-family:var(--font-display);font-size:0.7rem;font-weight:700;
+  letter-spacing:0.09em;text-transform:uppercase;color:#9AA1B5;white-space:nowrap;
+}
+@media (prefers-reduced-motion:reduce){
+  .brands-track{width:auto;flex-wrap:wrap;justify-content:center;}
+  .brands-set{flex-wrap:wrap;justify-content:center;padding-right:0;}
+  .brands-set + .brands-set{display:none;}
+  .brands-viewport + .brands-viewport{display:none;}
+  .brands-viewport{-webkit-mask-image:none;mask-image:none;}
+}
+
+/* ═══════════════════════════════════════════════
+   ABOUT
+   ═══════════════════════════════════════════════ */
+.about{padding:var(--section-y) 0;background:var(--bg);}
+.about-grid{
+  display:grid;grid-template-columns:1fr 0.88fr;
+  gap:clamp(36px,5vw,72px);align-items:center;
+}
+.about .sec-head{margin-bottom:0;}
+.about-points{margin-top:26px;display:grid;gap:12px;}
+.about-points li{display:flex;align-items:flex-start;gap:11px;font-size:0.95rem;font-weight:500;color:var(--ink-soft);}
+.about-media{border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-1);aspect-ratio:4/3;background:var(--bg-soft);}
+.about-media img{width:100%;height:100%;object-fit:cover;}
+
+/* ═══════════════════════════════════════════════
+   SERVICES (lifecycle)
+   ═══════════════════════════════════════════════ */
+.services{padding:var(--section-y) 0;background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+.svc-card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--r-md);
+  padding:28px 26px;position:relative;
+  display:flex;flex-direction:column;
+  box-shadow:var(--shadow-1);
+  transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;
+}
+.svc-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-2);border-color:#D8CBEF;}
+.svc-num{
+  position:absolute;top:24px;right:24px;
+  font-family:var(--font-display);font-size:0.8rem;font-weight:800;
+  color:#B9BFD1;letter-spacing:0.05em;
+}
+.svc-card h3{font-size:1.18rem;margin:18px 0 6px;}
+.svc-tagline{
+  font-family:var(--font-display);font-size:0.93rem;font-weight:700;
+  color:var(--violet);margin-bottom:10px;
+}
+.svc-card p.svc-desc{font-size:0.92rem;color:var(--muted);line-height:1.65;margin-bottom:18px;}
+.svc-card .link-arrow{margin-top:auto;}
+.svc-card--wide{grid-column:1 / -1;}
+.svc-card--wide .svc-inner{display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center;}
+.svc-card--wide h3{margin-top:0;}
+.svc-card--wide p.svc-desc{margin-bottom:0;max-width:640px;}
+.svc-card--wide .link-arrow{margin-top:0;}
+
+/* ═══════════════════════════════════════════════
+   SOLUTIONS (spaces)
+   ═══════════════════════════════════════════════ */
+.solutions{padding:var(--section-y) 0;background:var(--bg);}
+.sol-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.sol-card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--r-md);
+  overflow:hidden;display:flex;flex-direction:column;
+  box-shadow:var(--shadow-1);
+  transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;
+}
+.sol-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-2);border-color:#D8CBEF;}
+.sol-photo{position:relative;aspect-ratio:3/2;overflow:hidden;background:var(--navy);}
+.sol-photo img{width:100%;height:100%;object-fit:cover;}
+.sol-photo .tag{
+  position:absolute;left:14px;bottom:14px;
+  display:inline-flex;align-items:center;gap:9px;
+  background:rgba(11,16,48,0.78);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  border:1px solid rgba(255,255,255,0.16);border-radius:8px;
+  padding:6px 12px;
+  font-family:var(--font-display);font-size:0.75rem;font-weight:700;color:#fff;letter-spacing:0.04em;
+}
+.sol-photo .tag em{font-style:normal;color:var(--accent-on-navy);}
+.sol-body{padding:24px 24px 26px;display:flex;flex-direction:column;flex:1;}
+.sol-body h3{margin-bottom:8px;}
+.sol-body .sub{font-size:0.93rem;color:var(--muted);margin-bottom:18px;}
+.sol-list{display:grid;gap:12px;margin-bottom:20px;}
+.sol-list li{display:flex;gap:11px;align-items:flex-start;}
+.sol-list .mark{
+  width:6px;height:6px;border-radius:50%;background:var(--magenta);
+  flex-shrink:0;margin-top:8px;
+}
+.sol-list strong{display:block;font-family:var(--font-display);font-size:0.9rem;font-weight:700;color:var(--ink);}
+.sol-list span{font-size:0.85rem;color:var(--muted);line-height:1.5;}
+.sol-body .link-arrow{margin-top:auto;}
+
+/* Secondary solutions */
+.sol-secondary{
+  margin-top:26px;background:#fff;border:1px solid var(--line);border-radius:var(--r-md);
+  padding:clamp(20px,3vw,28px);box-shadow:var(--shadow-1);
+}
+.sol-secondary-label{
+  font-family:var(--font-display);font-size:0.72rem;font-weight:700;
+  letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);
+  margin-bottom:18px;
+}
+.sol-secondary-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.sol-mini{display:flex;gap:14px;align-items:flex-start;}
+.sol-mini strong{display:block;font-family:var(--font-display);font-size:0.94rem;font-weight:700;color:var(--ink);margin-bottom:3px;}
+.sol-mini span{font-size:0.85rem;color:var(--muted);line-height:1.5;}
+
+/* ═══════════════════════════════════════════════
+   HERITAGE & ARCHAEOLOGICAL AV  (dark)
+   ═══════════════════════════════════════════════ */
+.heritage{padding:var(--section-y) 0;background:var(--navy);color:var(--on-navy-strong);position:relative;overflow:hidden;}
+.heritage::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(40rem 24rem at 90% -6%,rgba(91,33,201,0.28),transparent 62%),
+    radial-gradient(30rem 20rem at 4% 110%,rgba(216,14,128,0.14),transparent 60%);
+}
+.heritage .container{position:relative;}
+.heritage h2{color:#fff;}
+.her-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.her-card{
+  background:var(--navy-2);border:1px solid var(--line-navy);border-radius:var(--r-md);
+  overflow:hidden;display:flex;flex-direction:column;
+  transition:transform .2s ease,border-color .2s ease;
+}
+.her-card:hover{transform:translateY(-3px);border-color:rgba(201,180,244,0.4);}
+.her-photo{aspect-ratio:16/10;overflow:hidden;background:#000;}
+.her-photo img{width:100%;height:100%;object-fit:cover;}
+.her-body{padding:22px 22px 24px;display:flex;flex-direction:column;flex:1;}
+.her-body h3{color:#fff;margin-bottom:8px;}
+.her-body p{font-size:0.9rem;color:var(--on-navy);line-height:1.65;margin-bottom:16px;}
+.her-body .link-arrow{margin-top:auto;}
+
+/* ═══════════════════════════════════════════════
+   INDUSTRIES  (dark)
+   ═══════════════════════════════════════════════ */
+.industries{padding:var(--section-y) 0;background:var(--navy);color:var(--on-navy-strong);border-top:1px solid var(--line-navy);}
+.ind-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.ind-card{
+  background:var(--navy-2);border:1px solid var(--line-navy);border-radius:var(--r-md);
+  padding:26px 24px;
+  transition:transform .2s ease,border-color .2s ease;
+}
+.ind-card:hover{transform:translateY(-3px);border-color:rgba(201,180,244,0.4);}
+.ind-card h3{color:#fff;margin:18px 0 8px;font-size:1.05rem;}
+.ind-card p{font-size:0.89rem;color:var(--on-navy);line-height:1.6;}
+
+/* ═══════════════════════════════════════════════
+   WHY VIVEINS
+   ═══════════════════════════════════════════════ */
+.why{padding:var(--section-y) 0;background:var(--bg);}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.why-card{
+  position:relative;background:var(--bg-soft);border:1px solid var(--line);
+  border-radius:var(--r-md);padding:26px 22px;
+  transition:transform .2s ease,box-shadow .2s ease,background-color .2s ease;
+}
+.why-card:hover{transform:translateY(-3px);background:#fff;box-shadow:var(--shadow-1);}
+.why-num{
+  position:absolute;top:20px;right:20px;
+  font-family:var(--font-display);font-size:0.8rem;font-weight:800;
+  color:#B9BFD1;letter-spacing:0.05em;
+}
+.why-card h3{font-size:1.05rem;margin:16px 0 8px;}
+.why-card p{font-size:0.89rem;color:var(--muted);line-height:1.6;}
+
+/* ═══════════════════════════════════════════════
+   CASE STUDIES
+   ═══════════════════════════════════════════════ */
+.cases{padding:var(--section-y) 0;background:var(--bg-soft);border-top:1px solid var(--line);}
+.case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.case-card{
+  position:relative;display:flex;flex-direction:column;gap:14px;
+  background:var(--navy);border-radius:var(--r-md);
+  padding:30px 26px;min-height:220px;
+  color:#fff;text-decoration:none;overflow:hidden;
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+.case-card::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(24rem 14rem at 100% 0%,rgba(91,33,201,0.4),transparent 65%);
+}
+.case-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-2);}
+.case-num{
+  font-family:var(--font-display);font-size:2.2rem;font-weight:800;
+  color:transparent;-webkit-text-stroke:1px rgba(255,255,255,0.4);
+  line-height:1;position:relative;
+}
+.case-card h3{color:#fff;position:relative;}
+.case-card p{font-size:0.88rem;color:var(--on-navy);line-height:1.6;position:relative;}
+.case-open{
+  position:relative;margin-top:auto;
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--font-display);font-size:0.88rem;font-weight:700;color:var(--accent-on-navy);
+}
+.case-open svg{width:15px;height:15px;transition:transform .18s ease;}
+.case-card:hover .case-open svg{transform:translateX(3px);}
+
+/* ═══════════════════════════════════════════════
+   PRESENCE  (dark, India map)
+   ═══════════════════════════════════════════════ */
+.presence{padding:var(--section-y) 0;background:var(--navy);color:var(--on-navy-strong);position:relative;overflow:hidden;}
+.presence::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(42rem 26rem at 14% 0%,rgba(91,33,201,0.30),transparent 62%),
+    radial-gradient(32rem 22rem at 96% 100%,rgba(30,111,217,0.18),transparent 60%);
+}
+.presence .container{position:relative;}
+.presence h2{color:#fff;}
+.presence-grid{display:grid;grid-template-columns:1fr 0.92fr;gap:clamp(32px,5vw,64px);align-items:center;}
+.presence-map{
+  background:rgba(255,255,255,0.03);
+  border:1px solid var(--line-navy);border-radius:var(--r-lg);
+  padding:clamp(16px,2.5vw,28px);
+}
+.presence-map svg{width:100%;height:auto;display:block;}
+.map-body{fill:rgba(255,255,255,0.055);stroke:rgba(201,180,244,0.35);stroke-width:1.6;stroke-linejoin:round;}
+.map-link{stroke:rgba(201,180,244,0.28);stroke-width:1;stroke-dasharray:3 5;fill:none;}
+.map-pin-dot{fill:url(#pinGrad);}
+.map-pin-ring{fill:none;stroke:var(--magenta);stroke-width:1.4;opacity:0.6;transform-origin:center;animation:pinPulse 2.6s ease-out infinite;}
+@keyframes pinPulse{
+  0%{opacity:0.7;r:6;}
+  70%{opacity:0;r:15;}
+  100%{opacity:0;r:15;}
+}
+.map-label{
+  font-family:var(--font-display);font-size:12.5px;font-weight:700;
+  fill:#fff;letter-spacing:0.03em;
+}
+.map-label-sub{font-family:var(--font-body);font-size:9.5px;fill:rgba(255,255,255,0.55);}
+.presence-note{margin-top:14px;font-size:0.78rem;color:rgba(255,255,255,0.45);text-align:center;}
+.city-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:26px;}
+.city-card{
+  display:flex;align-items:center;gap:12px;
+  background:var(--navy-2);border:1px solid var(--line-navy);border-radius:var(--r-sm);
+  padding:14px 16px;
+  transition:border-color .2s ease,transform .2s ease;
+}
+.city-card:hover{border-color:rgba(201,180,244,0.4);transform:translateY(-2px);}
+.city-card--hq{grid-column:1 / -1;border-color:rgba(201,180,244,0.35);background:linear-gradient(115deg,rgba(74,16,181,0.28),rgba(216,14,128,0.14)),var(--navy-2);}
+.city-dot{
+  width:10px;height:10px;border-radius:50%;flex-shrink:0;
+  background:linear-gradient(135deg,var(--violet-deep),var(--magenta));
+  box-shadow:0 0 0 4px rgba(216,14,128,0.16);
+}
+.city-card strong{font-family:var(--font-display);font-size:0.95rem;font-weight:700;color:#fff;display:block;line-height:1.3;}
+.city-card span{font-size:0.78rem;color:var(--on-navy);}
+
+/* ═══════════════════════════════════════════════
+   PROCESS
+   ═══════════════════════════════════════════════ */
+.process{padding:var(--section-y) 0;background:var(--bg-soft);border-top:1px solid var(--line);}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;}
+.step{position:relative;padding:0 22px 0 0;}
+.step + .step{padding-left:22px;border-left:1px solid var(--line);}
+.step-num{
+  width:40px;height:40px;border-radius:50%;
+  background:linear-gradient(135deg,var(--violet-deep),var(--magenta));
+  color:#fff;font-family:var(--font-display);font-weight:800;font-size:0.95rem;
+  display:flex;align-items:center;justify-content:center;margin-bottom:16px;
+}
+.step h3{font-size:1.02rem;margin-bottom:7px;}
+.step p{font-size:0.89rem;color:var(--muted);line-height:1.6;}
+
+/* ═══════════════════════════════════════════════
+   CTA BAND
+   ═══════════════════════════════════════════════ */
+.cta-band{padding:var(--section-y) 0;background:var(--navy);position:relative;overflow:hidden;}
+.cta-band::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(38rem 22rem at 84% 0%,rgba(91,33,201,0.32),transparent 64%),
+    radial-gradient(30rem 20rem at 8% 110%,rgba(216,14,128,0.16),transparent 60%);
+}
+.cta-inner{position:relative;max-width:720px;margin:0 auto;text-align:center;color:#fff;}
+.cta-inner h2{color:#fff;}
+.cta-inner p{margin:16px auto 30px;max-width:540px;color:var(--on-navy);}
+.cta-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;}
+.cta-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin-top:32px;}
+.cta-tags span{
+  font-family:var(--font-display);font-size:0.76rem;font-weight:700;letter-spacing:0.05em;
+  color:rgba(255,255,255,0.85);background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.18);border-radius:999px;padding:7px 15px;
+}
+
+/* ═══════════════════════════════════════════════
+   INSIGHTS / BLOG
+   ═══════════════════════════════════════════════ */
+.insights{padding:var(--section-y) 0;background:var(--bg);}
+.post-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.post-card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--r-md);
+  overflow:hidden;display:flex;flex-direction:column;
+  text-decoration:none;
+  transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;
+}
+.post-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-1);border-color:#D8CBEF;}
+.post-photo{aspect-ratio:16/10;overflow:hidden;background:var(--bg-soft);}
+.post-photo img{width:100%;height:100%;object-fit:cover;}
+.post-body{padding:18px 18px 20px;display:flex;flex-direction:column;flex:1;}
+.post-chip{
+  align-self:flex-start;
+  font-family:var(--font-display);font-size:0.68rem;font-weight:700;
+  letter-spacing:0.1em;text-transform:uppercase;color:var(--violet);
+  background:rgba(91,33,201,0.08);border-radius:999px;padding:4px 11px;
+  margin-bottom:12px;
+}
+.post-card h3{font-size:1rem;line-height:1.35;color:var(--ink);margin-bottom:8px;}
+.post-card p{font-size:0.85rem;color:var(--muted);line-height:1.55;margin-bottom:14px;}
+.post-read{
+  margin-top:auto;
+  display:inline-flex;align-items:center;gap:7px;
+  font-family:var(--font-display);font-size:0.85rem;font-weight:700;color:var(--violet);
+}
+.post-read svg{width:14px;height:14px;transition:transform .18s ease;}
+.post-card:hover .post-read svg{transform:translateX(3px);}
+
+/* ═══════════════════════════════════════════════
+   CONTACT
+   ═══════════════════════════════════════════════ */
+.contact{padding:var(--section-y) 0;background:var(--bg-soft);border-top:1px solid var(--line);}
+.contact-grid{display:grid;grid-template-columns:1fr 0.92fr;gap:clamp(32px,4.5vw,60px);align-items:start;}
+.contact-list{display:grid;gap:8px;}
+.contact-row{
+  display:flex;gap:16px;align-items:flex-start;
+  padding:18px;border:1px solid var(--line);border-radius:var(--r-md);background:#fff;
+}
+.contact-row h3{font-size:0.98rem;margin-bottom:3px;}
+.contact-row p{font-size:0.92rem;color:var(--muted);line-height:1.6;}
+.contact-row a{color:var(--violet);font-weight:600;text-decoration:none;word-break:break-word;}
+.contact-row a:hover{text-decoration:underline;}
+.contact-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px;}
+.contact-media{
+  border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-1);
+  aspect-ratio:4/3;background:#fff;border:1px solid var(--line);
+}
+.contact-media iframe{width:100%;height:100%;}
+
+/* ═══════════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════════ */
+.site-footer{background:var(--navy);color:var(--on-navy);}
+.footer-top{
+  max-width:var(--container);margin:0 auto;padding:clamp(48px,6vw,72px) var(--gutter) 40px;
+  display:grid;grid-template-columns:1.4fr 0.9fr 0.9fr 1.1fr;gap:clamp(28px,3.5vw,52px);
+}
+.footer-logo{display:inline-block;margin-bottom:13px;}
+.footer-logo picture{display:block;}
+.footer-logo img{height:64px;width:auto;display:block;}
+.footer-blurb{font-size:0.92rem;line-height:1.7;max-width:360px;}
+.footer-tagline{
+  margin:0 0 18px;font-family:var(--font-display);font-size:0.78rem;font-weight:700;
+  letter-spacing:0.1em;text-transform:uppercase;color:var(--accent-on-navy);
+}
+.footer-col h4{
+  font-family:var(--font-display);font-size:0.78rem;font-weight:700;
+  letter-spacing:0.13em;text-transform:uppercase;color:#fff;margin-bottom:18px;
+}
+.footer-col ul{display:grid;gap:11px;}
+.footer-col a{color:var(--on-navy);text-decoration:none;font-size:0.92rem;transition:color .15s ease;}
+.footer-col a:hover{color:#fff;}
+.footer-col address{font-style:normal;font-size:0.9rem;line-height:1.7;color:var(--on-navy);}
+.footer-col address a{color:var(--accent-on-navy);text-decoration:none;font-weight:600;}
+.footer-bottom{border-top:1px solid var(--line-navy);}
+.footer-bottom-inner{
+  max-width:var(--container);margin:0 auto;padding:20px var(--gutter);
+  display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;
+  font-size:0.83rem;color:rgba(255,255,255,0.55);
+}
+
+/* ═══════════════════════════════════════════════
+   WHATSAPP FLOAT
+   ═══════════════════════════════════════════════ */
+.wa-float{
+  position:fixed;z-index:90;
+  right:max(16px,env(safe-area-inset-right));
+  bottom:max(18px,calc(env(safe-area-inset-bottom) + 14px));
+  width:52px;height:52px;border-radius:50%;
+  background:#23A455;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 24px rgba(16,20,48,0.28);
+  transition:transform .18s ease,box-shadow .18s ease;
+}
+.wa-float:hover{transform:scale(1.07);box-shadow:0 12px 30px rgba(16,20,48,0.34);}
+.wa-float svg{width:27px;height:27px;fill:#fff;}
+body.menu-open .wa-float{display:none;}
+.site-footer{padding-bottom:calc(28px + env(safe-area-inset-bottom));}
+
+/* ═══════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════ */
+@media (max-width:1099px){
+  .why-grid{grid-template-columns:repeat(2,1fr);}
+  .ind-grid{grid-template-columns:repeat(2,1fr);}
+  .post-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media (max-width:1060px){
+  .main-nav{display:none;}
+  .header-cta{display:none;}
+  .menu-btn{display:flex;}
+}
+@media (max-width:980px){
+  .hero-grid{grid-template-columns:1fr;}
+  .hero .lead{max-width:none;}
+  .footer-top{grid-template-columns:1fr 1fr;}
+  .footer-brand-col{grid-column:1 / -1;}
+  .presence-grid{grid-template-columns:1fr;}
+  .her-grid{grid-template-columns:1fr;}
+  .her-photo{aspect-ratio:16/8;}
+}
+@media (max-width:899px){
+  .sol-grid{grid-template-columns:1fr;}
+  .sol-card{display:grid;grid-template-columns:280px 1fr;}
+  .sol-photo{aspect-ratio:auto;height:100%;min-height:240px;}
+  .sol-secondary-grid{grid-template-columns:1fr;}
+  .svc-grid{grid-template-columns:1fr;}
+  .svc-card--wide .svc-inner{grid-template-columns:1fr;gap:14px;}
+  .case-grid{grid-template-columns:1fr;}
+  .case-card{min-height:0;}
+  .steps{grid-template-columns:1fr;gap:26px;}
+  .step{padding:0 0 0 54px;}
+  .step + .step{padding-left:54px;border-left:0;}
+  .step::before{content:'';position:absolute;left:19px;top:46px;bottom:-26px;width:2px;background:var(--line);}
+  .step:last-child::before{display:none;}
+  .step-num{position:absolute;left:0;top:0;margin-bottom:0;}
+  .about-grid{grid-template-columns:1fr;}
+  .about-media{aspect-ratio:16/9;}
+  .contact-grid{grid-template-columns:1fr;}
+  .contact-media{order:-1;aspect-ratio:16/9;}
+}
+@media (max-width:639px){
+  :root{--header-h:64px;}
+  .brand img{height:40px;}
+  .sol-card{grid-template-columns:1fr;}
+  .sol-photo{aspect-ratio:16/9;min-height:0;height:auto;}
+  .why-grid{grid-template-columns:1fr;}
+  .ind-grid{grid-template-columns:1fr;}
+  .post-grid{grid-template-columns:1fr;}
+  .city-grid{grid-template-columns:1fr;}
+  .hero-actions .btn{flex:1 1 100%;}
+  .cta-actions .btn,.contact-actions .btn{flex:1 1 100%;}
+  .footer-top{grid-template-columns:1fr;gap:32px;}
+  .cap-strip-inner{justify-content:flex-start;gap:12px 24px;}
+  .brand-tile{min-width:0;gap:12px;padding:14px 20px 14px 16px;}
+  .brand-cat{display:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a href="#home" class="brand" aria-label="Viveins Technologies home">
+      <img src="logo-lockup.png" alt="Viveins: See, Hear, Connect, Feel" width="760" height="250"/>
+    </a>
+    <nav class="main-nav" aria-label="Primary">
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#solutions">Solutions</a></li>
+        <li><a href="#heritage">Heritage AV</a></li>
+        <li><a href="#case-studies">Case Studies</a></li>
+        <li><a href="#insights">Insights</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="https://wa.me/919511114676?text=Hi%2C%20I%27d%20like%20to%20request%20a%20consultation%20for%20Viveins%20Technologies." target="_blank" rel="noopener" class="btn btn-primary header-cta">Request a Consultation</a>
+    <button class="menu-btn" type="button" aria-label="Open menu" aria-controls="mobileDrawer" aria-expanded="false" id="menuOpen">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile drawer -->
+<div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
+<aside class="drawer" id="mobileDrawer" aria-label="Mobile navigation" aria-hidden="true">
+  <div class="drawer-head">
+    <a href="#home" class="brand" data-menu-close aria-label="Viveins Technologies home">
+      <img src="logo-lockup.png" alt="Viveins: See, Hear, Connect, Feel" width="760" height="250"/>
+    </a>
+    <button class="drawer-close" type="button" aria-label="Close menu" data-menu-close>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <nav class="drawer-nav" aria-label="Mobile">
+    <a href="#services" data-menu-close>Services <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg></a>
+    <a href="#solutions" data-menu-close>Solutions <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg></a>
+    <a href="#heritage" data-menu-close>Heritage AV <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg></a>
+    <a href="#industries" data-menu-close>Industries <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg></a>
+    <a href="#why-viveins" data-menu-close>Why Us <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg></a>
+    <a href="#about" data-menu-close>About <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg></a>
+    <a href="#case-studies" data-menu-close>Case Studies <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg></a>
+    <a href="#presence" data-menu-close>Our Presence <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg></a>
+    <a href="#insights" data-menu-close>Insights <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg></a>
+    <a href="#contact" data-menu-close>Contact <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg></a>
+  </nav>
+  <div class="drawer-foot">
+    <a href="https://wa.me/919511114676?text=Hi%2C%20I%27d%20like%20to%20request%20a%20consultation%20for%20Viveins%20Technologies." target="_blank" rel="noopener" class="btn btn-primary" data-menu-close>Request a Consultation</a>
+    <p>
+      <a href="mailto:info@viveins.com" class="mail">info@viveins.com</a><br/>
+      Monday – Saturday · 9:00 AM – 5:00 PM
+    </p>
+  </div>
+</aside>
+
+<main id="home">
+
+  <!-- ═══════════ HERO ═══════════ -->
+  <section class="hero" aria-label="Introduction">
+    <div class="container hero-grid">
+      <div>
+        <span class="hero-eyebrow"><span class="dot"></span>Viveins Technologies Pvt.&nbsp;Ltd.</span>
+        <h1>Smarter Spaces.<br/><span class="accent">Seamless AV.</span></h1>
+        <p class="lead">Reliable, innovative audiovisual solutions for businesses, educational institutions, hospitality venues, auditoriums and modern workspaces.</p>
+        <div class="hero-actions">
+          <a href="https://wa.me/919511114676?text=Hi%2C%20I%27d%20like%20to%20request%20a%20consultation%20for%20Viveins%20Technologies." target="_blank" rel="noopener" class="btn btn-primary">Request a Consultation</a>
+          <a href="#services" class="btn btn-secondary">Explore Services</a>
+        </div>
+        <ul class="hero-proof">
+          <li><span class="tick" aria-hidden="true"><svg viewBox="0 0 12 12"><polyline points="2,6.2 5,9 10,3"/></svg></span>Consultation to installation &amp; ongoing support</li>
+          <li><span class="tick" aria-hidden="true"><svg viewBox="0 0 12 12"><polyline points="2,6.2 5,9 10,3"/></svg></span>Corporate · Education · Auditoriums · Heritage · Signage</li>
+          <li><span class="tick" aria-hidden="true"><svg viewBox="0 0 12 12"><polyline points="2,6.2 5,9 10,3"/></svg></span>Customized, scalable AV systems</li>
+        </ul>
+      </div>
+      <div class="hero-media">
+        <div class="frame">
+          <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=1000&h=750&q=80&auto=format&fit=crop" alt="Large-format AV display presenting to an audience" width="1000" height="750" fetchpriority="high"/>
+          <div class="caption">
+            <span class="cap-dot" aria-hidden="true"></span>
+            <p>Design · Install · Support<span>One accountable team, first call to final handover</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ CAPABILITY STRIP ═══════════ -->
+  <div class="cap-strip" role="list" aria-label="Capabilities">
+    <div class="cap-strip-inner">
+      <span class="cap-item" role="listitem"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Reliable AV Systems</span>
+      <span class="cap-item" role="listitem"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>Modern Technology</span>
+      <span class="cap-item" role="listitem"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg>End-to-End Execution</span>
+      <span class="cap-item" role="listitem"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Corporate · Education · Auditoriums</span>
+      <span class="cap-item" role="listitem"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Design · Install · Support</span>
+    </div>
+  </div>
+
+  <!-- ═══════════ BRANDS ═══════════ -->
+  <section class="brands" aria-label="Brands we work with">
+    <div class="container">
+      <div class="sec-head center">
+        <span class="eyebrow" style="justify-content:center;">Technology Partners</span>
+        <h2>Brands We Work With</h2>
+        <p>Best-fit technology from trusted names, selected for your space, integrated by our team.</p>
+      </div>
+    </div>
+    <div class="brands-viewport">
+      <div class="brands-track">
+        <div class="brands-set">
+          <div class="brand-tile"><span class="brand-logo bl-qsc" role="img" aria-label="QSC"></span><span class="brand-cat">Professional Audio</span></div>
+          <div class="brand-tile"><span class="brand-logo bl-bosch" role="img" aria-label="Bosch"></span><span class="brand-cat">Conferencing &amp; PA</span></div>
+          <div class="brand-tile"><span class="brand-logo bl-crestron" role="img" aria-label="Crestron"></span><span class="brand-cat">Control &amp; Automation</span></div>
+          <div class="brand-tile"><span class="brand-logo bl-xilica" role="img" aria-label="Xilica"></span><span class="brand-cat">Audio Processing</span></div>
+          <div class="brand-tile"><span class="brand-logo bl-televic" role="img" aria-label="Televic"></span><span class="brand-cat">Conference Systems</span></div>
+          <div class="brand-tile"><span class="brand-logo bl-shure" role="img" aria-label="Shure"></span><span class="brand-cat">Microphones &amp; Wireless</span></div>
+        </div>
+        <div class="brands-set" aria-hidden="true">
+          <div class="brand-tile"><span class="brand-logo bl-qsc" aria-hidden="true"></span><span class="brand-cat">Professional Audio</span></div>
+          <div class="brand-tile"><span class="brand-logo bl-bosch" aria-hidden="true"></span><span class="brand-cat">Conferencing &amp; PA</span></div>
+          <div class="brand-tile"><span class="brand-logo bl-crestron" aria-hidden="true"></span><span class="brand-cat">Control &amp; Automation</span></div>
+          <div class="brand-tile"><span class="brand-logo bl-xilica" aria-hidden="true"></span><span class="brand-cat">Audio Processing</span></div>
+          <div class="brand-tile"><span class="brand-logo bl-televic" aria-hidden="true"></span><span class="brand-cat">Conference Systems</span></div>
+          <div class="brand-tile"><span class="brand-logo bl-shure" aria-hidden="true"></span><span class="brand-cat">Microphones &amp; Wireless</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="brands-viewport" aria-hidden="true">
+      <div class="brands-track rev">
+        <div class="brands-set">
+          <div class="brand-tile"><span class="brand-logo bl-shure" aria-hidden="true"></span><span class="brand-cat">Microphones &amp; Wireless</span></div>
+          <div class="brand-tile"><span class="brand-logo bl-televic" aria-hidden="true"></span><span class="brand-cat">Conference Systems</span></div>
+          <div class="brand-tile"><span class="brand-logo bl-xilica" aria-hidden="true"></span><span class="brand-cat">Audio Processing</span></div>
+          <div class="brand-tile"><span class="brand-logo bl-crestron" aria-hidden="true"></span><span class="brand-cat">Control &amp; Automation</span></div>
+          <div class="brand-tile"><span class="brand-logo bl-bosch" aria-hidden="true"></span><span class="brand-cat">Conferencing &amp; PA</span></div>
+          <div class="brand-tile"><span class="brand-logo bl-qsc" aria-hidden="true"></span><span class="brand-cat">Professional Audio</span></div>
+        </div>
+        <div class="brands-set">
+          <div class="brand-tile"><span class="brand-logo bl-shure" aria-hidden="true"></span><span class="brand-cat">Microphones &amp; Wireless</span></div>
+          <div class="brand-tile"><span class="brand-logo bl-televic" aria-hidden="true"></span><span class="brand-cat">Conference Systems</span></div>
+          <div class="brand-tile"><span class="brand-logo bl-xilica" aria-hidden="true"></span><span class="brand-cat">Audio Processing</span></div>
+          <div class="brand-tile"><span class="brand-logo bl-crestron" aria-hidden="true"></span><span class="brand-cat">Control &amp; Automation</span></div>
+          <div class="brand-tile"><span class="brand-logo bl-bosch" aria-hidden="true"></span><span class="brand-cat">Conferencing &amp; PA</span></div>
+          <div class="brand-tile"><span class="brand-logo bl-qsc" aria-hidden="true"></span><span class="brand-cat">Professional Audio</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ ABOUT ═══════════ -->
+  <section class="about" id="about">
+    <div class="container about-grid">
+      <div class="sec-head reveal">
+        <span class="eyebrow">About Us</span>
+        <h2>Audiovisual Technology,<br/>Designed Around You</h2>
+        <p>We combine quality equipment, thoughtful system design and technical expertise to help clients communicate, collaborate, teach, present and entertain more effectively, managing every stage of the project with precision.</p>
+        <ul class="about-points">
+          <li><span class="tick" aria-hidden="true"><svg viewBox="0 0 12 12"><polyline points="2,6.2 5,9 10,3"/></svg></span>Complete project execution, consultation to handover</li>
+          <li><span class="tick" aria-hidden="true"><svg viewBox="0 0 12 12"><polyline points="2,6.2 5,9 10,3"/></svg></span>Customized &amp; scalable systems built for your space</li>
+          <li><span class="tick" aria-hidden="true"><svg viewBox="0 0 12 12"><polyline points="2,6.2 5,9 10,3"/></svg></span>Responsive after-sales support and training</li>
+        </ul>
+      </div>
+      <div class="about-media reveal">
+        <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1000&h=750&q=75&auto=format&fit=crop" alt="Professional AV control and audio equipment in operation" width="1000" height="750" loading="lazy"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ SERVICES ═══════════ -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="sec-head center reveal">
+        <span class="eyebrow" style="justify-content:center;">Our Services</span>
+        <h2>End-to-End AV Services,<br/>One Accountable Team</h2>
+        <p>From the first site survey to long-term support, every stage of your audiovisual project, handled by specialists.</p>
+      </div>
+
+      <div class="svc-grid">
+        <article class="svc-card reveal">
+          <span class="svc-num">01</span>
+          <span class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg></span>
+          <h3>Consultation &amp; Pre-Sales</h3>
+          <p class="svc-tagline">Start smart, with clear scope and the right strategy.</p>
+          <p class="svc-desc">Every successful AV project begins with insight. Our consultation service helps you define your goals, understand your space, and plan a solution that works. From site surveys and user interviews to early-stage design input, we make sure your AV starts with a strong foundation.</p>
+          <a href="https://wa.me/919511114676?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20Consultation%20%26%20Pre-Sales." target="_blank" rel="noopener" class="link-arrow">Explore More <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        </article>
+
+        <article class="svc-card reveal">
+          <span class="svc-num">02</span>
+          <span class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg></span>
+          <h3>Design &amp; Integration</h3>
+          <p class="svc-tagline">AV systems designed to fit, and built to work.</p>
+          <p class="svc-desc">We take your requirements and turn them into reality. Our team designs integrated AV systems using best-fit technology from our partners, ensuring compatibility, scalability, and simplicity. We deliver complete designs that consider everything from user experience to cable management and future upgrades.</p>
+          <a href="https://wa.me/919511114676?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20Design%20%26%20Integration." target="_blank" rel="noopener" class="link-arrow">Explore More <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        </article>
+
+        <article class="svc-card reveal">
+          <span class="svc-num">03</span>
+          <span class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 15l2 2 4-4"/></svg></span>
+          <h3>Project Management</h3>
+          <p class="svc-tagline">One team. Full accountability.</p>
+          <p class="svc-desc">We take the pressure off your team by managing the entire AV delivery process. Our project managers handle supplier coordination, site scheduling, risk assessments, and progress reporting, ensuring everything runs smoothly, on time, and to spec.</p>
+          <a href="https://wa.me/919511114676?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20Project%20Management." target="_blank" rel="noopener" class="link-arrow">Explore More <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        </article>
+
+        <article class="svc-card reveal">
+          <span class="svc-num">04</span>
+          <span class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4.5 4.5 0 0 0-6 6L3 18v3h3l5.7-5.7a4.5 4.5 0 0 0 6-6L15 12l-3-3z"/></svg></span>
+          <h3>Audio Visual Installation</h3>
+          <p class="svc-tagline">Precision installation. Minimal disruption.</p>
+          <p class="svc-desc">Our certified AV engineers carry out clean, compliant installations across a wide range of environments, from corporate offices and classrooms to council chambers and control rooms. We handle the final fix, commissioning, and walkthrough, all with safety and efficiency in mind.</p>
+          <a href="https://wa.me/919511114676?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20Audio%20Visual%20Installation." target="_blank" rel="noopener" class="link-arrow">Explore More <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        </article>
+
+        <article class="svc-card reveal">
+          <span class="svc-num">05</span>
+          <span class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="12" rx="2"/><path d="M8 20h8M12 16v4M8 9h3M8 12h5"/></svg></span>
+          <h3>Audio Visual Programming</h3>
+          <p class="svc-tagline">Smart control that makes complex systems simple.</p>
+          <p class="svc-desc">We configure and program your AV control systems for smooth, intuitive operation. From touchscreen interfaces and scene settings to automation logic and audio DSP, we make sure your system is easy to use and built around the way your team works.</p>
+          <a href="https://wa.me/919511114676?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20Audio%20Visual%20Programming." target="_blank" rel="noopener" class="link-arrow">Explore More <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        </article>
+
+        <article class="svc-card reveal">
+          <span class="svc-num">06</span>
+          <span class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M21 11l-3 3-1.5-1.5"/></svg></span>
+          <h3>User Training</h3>
+          <p class="svc-tagline">Empower your people to get the most out of your AV.</p>
+          <p class="svc-desc">Once your system is live, we ensure your team knows how to use it confidently. Our training sessions are tailored to your setup and users, with hands-on walkthroughs, cheat sheets, and post-training support options to ensure long-term adoption and satisfaction.</p>
+          <a href="https://wa.me/919511114676?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20User%20Training." target="_blank" rel="noopener" class="link-arrow">Explore More <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        </article>
+
+        <article class="svc-card svc-card--wide reveal">
+          <span class="svc-num">07</span>
+          <div class="svc-inner">
+            <span class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></span>
+            <div>
+              <h3>Support &amp; Maintenance</h3>
+              <p class="svc-tagline">AV that performs today, and keeps performing tomorrow.</p>
+              <p class="svc-desc">We offer a range of support and maintenance plans to protect your investment. From scheduled servicing and emergency response to system health checks and remote diagnostics, we keep your AV running smoothly and your team fully supported.</p>
+            </div>
+            <a href="https://wa.me/919511114676?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20Support%20%26%20Maintenance." target="_blank" rel="noopener" class="link-arrow">Explore More <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ SOLUTIONS ═══════════ -->
+  <section class="solutions" id="solutions">
+    <div class="container">
+      <div class="sec-head center reveal">
+        <span class="eyebrow" style="justify-content:center;">Our Solutions</span>
+        <h2>Complete Audiovisual Solutions<br/>for Every Space</h2>
+        <p>From consultation and system design to installation and ongoing support, AV solutions built around your needs.</p>
+      </div>
+
+      <div class="sol-grid">
+        <!-- Corporate AV -->
+        <article class="sol-card reveal">
+          <div class="sol-photo">
+            <img src="https://images.unsplash.com/photo-1587691592099-24045742c181?w=800&h=534&q=80&auto=format&fit=crop" alt="Corporate audiovisual presentation setup" width="800" height="534" loading="lazy"/>
+            <span class="tag"><em>01</em>Corporate AV</span>
+          </div>
+          <div class="sol-body">
+            <h3>Corporate AV Solutions</h3>
+            <p class="sub">Improve meetings and workplace collaboration with professionally designed AV systems.</p>
+            <ul class="sol-list">
+              <li><span class="mark" aria-hidden="true"></span><div><strong>Conference Room Displays</strong><span>Professionally designed displays for every meeting room</span></div></li>
+              <li><span class="mark" aria-hidden="true"></span><div><strong>Video Conferencing</strong><span>Microphones, speakers &amp; control systems built in</span></div></li>
+              <li><span class="mark" aria-hidden="true"></span><div><strong>Wireless Presentation</strong><span>Present and collaborate without the cable clutter</span></div></li>
+            </ul>
+            <a href="https://wa.me/919511114676?text=Hi%2C%20I%27d%20like%20to%20request%20a%20consultation%20about%20Corporate%20AV%20solutions." target="_blank" rel="noopener" class="link-arrow">Request a Consultation <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          </div>
+        </article>
+
+        <!-- Smart Classrooms -->
+        <article class="sol-card reveal">
+          <div class="sol-photo">
+            <img src="https://images.unsplash.com/photo-1606761568499-6d2451b23c66?w=800&h=534&q=80&auto=format&fit=crop" alt="Modern lecture hall with active projector display" width="800" height="534" loading="lazy"/>
+            <span class="tag"><em>02</em>Education</span>
+          </div>
+          <div class="sol-body">
+            <h3>Smart Classrooms &amp; Training Rooms</h3>
+            <p class="sub">Engaging learning environments built for hybrid and in-person teaching.</p>
+            <ul class="sol-list">
+              <li><span class="mark" aria-hidden="true"></span><div><strong>Interactive Displays</strong><span>Projectors &amp; interactive displays for every classroom</span></div></li>
+              <li><span class="mark" aria-hidden="true"></span><div><strong>Lecture Capture</strong><span>Record and stream lessons with ease</span></div></li>
+              <li><span class="mark" aria-hidden="true"></span><div><strong>Hybrid Learning Tech</strong><span>Classroom audio built for in-person &amp; remote students</span></div></li>
+            </ul>
+            <a href="https://wa.me/919511114676?text=Hi%2C%20I%27d%20like%20to%20request%20a%20consultation%20about%20Smart%20Classroom%20solutions." target="_blank" rel="noopener" class="link-arrow">Request a Consultation <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          </div>
+        </article>
+
+        <!-- Auditoriums -->
+        <article class="sol-card reveal">
+          <div class="sol-photo">
+            <img src="https://images.unsplash.com/photo-1519452575417-564c1401ecc0?w=800&h=534&q=80&auto=format&fit=crop" alt="Modern auditorium with tiered seating" width="800" height="534" loading="lazy"/>
+            <span class="tag"><em>03</em>Auditoriums</span>
+          </div>
+          <div class="sol-body">
+            <h3>Auditoriums &amp; Multipurpose Halls</h3>
+            <p class="sub">Clear sound and impressive visuals for large venues, designed to perform.</p>
+            <ul class="sol-list">
+              <li><span class="mark" aria-hidden="true"></span><div><strong>Audio &amp; Projection</strong><span>Complete sound, projection &amp; lighting systems</span></div></li>
+              <li><span class="mark" aria-hidden="true"></span><div><strong>Stage &amp; Control Systems</strong><span>Built for large venues and multipurpose halls</span></div></li>
+              <li><span class="mark" aria-hidden="true"></span><div><strong>Scalable Design</strong><span>Systems that grow with your venue's needs</span></div></li>
+            </ul>
+            <a href="https://wa.me/919511114676?text=Hi%2C%20I%27d%20like%20to%20request%20a%20consultation%20about%20Auditorium%20solutions." target="_blank" rel="noopener" class="link-arrow">Request a Consultation <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          </div>
+        </article>
+      </div>
+
+      <!-- Secondary solutions -->
+      <div class="sol-secondary reveal">
+        <p class="sol-secondary-label">Also part of our solutions</p>
+        <div class="sol-secondary-grid">
+          <div class="sol-mini">
+            <span class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>
+            <div><strong>Digital Signage &amp; Displays</strong><span>Video walls, LED screens &amp; managed signage</span></div>
+          </div>
+          <div class="sol-mini">
+            <span class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3z"/><path d="M19 11a7 7 0 0 1-14 0M12 18v3"/></svg></span>
+            <div><strong>Professional Audio Systems</strong><span>Microphones, speakers, amplifiers &amp; acoustic planning</span></div>
+          </div>
+          <div class="sol-mini">
+            <span class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M8.6 10.5l6.8-3M8.6 13.5l6.8 3"/></svg></span>
+            <div><strong>System Integration &amp; Support</strong><span>Installation, testing, training &amp; technical support</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ HERITAGE & ARCHAEOLOGICAL AV ═══════════ -->
+  <section class="heritage on-dark" id="heritage">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Archaeological &amp; Heritage AV</span>
+        <h2>Bringing History to Life<br/>with Immersive AV</h2>
+        <p>Museums, monuments and cultural spaces deserve storytelling as powerful as their history. We design and integrate immersive audiovisual experiences that turn visits into journeys, engaging, accessible and unforgettable.</p>
+      </div>
+      <div class="her-grid">
+        <article class="her-card reveal">
+          <div class="her-photo">
+            <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=800&h=500&q=75&auto=format&fit=crop" alt="Projector casting a beam of light in a dark space" width="800" height="500" loading="lazy"/>
+          </div>
+          <div class="her-body">
+            <h3>Projection Mapping</h3>
+            <p>Transform façades, monuments and gallery interiors into living canvases. We plan, design and integrate projection-mapping systems (projector placement, media servers, content workflows and show control) matched to the architecture they illuminate.</p>
+            <a href="https://wa.me/919511114676?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20Projection%20Mapping." target="_blank" rel="noopener" class="link-arrow">Explore More <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          </div>
+        </article>
+        <article class="her-card reveal">
+          <div class="her-photo">
+            <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&h=500&q=75&auto=format&fit=crop" alt="Dramatic beams of light over an audience at a night show" width="800" height="500" loading="lazy"/>
+          </div>
+          <div class="her-body">
+            <h3>Light &amp; Sound Shows</h3>
+            <p>Narrated sound-and-light experiences for forts, archaeological sites and public spaces: synchronized lighting, multi-zone audio, narration playback and weather-appropriate equipment planning, engineered for reliable nightly operation.</p>
+            <a href="https://wa.me/919511114676?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20Light%20%26%20Sound%20Shows." target="_blank" rel="noopener" class="link-arrow">Explore More <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          </div>
+        </article>
+        <article class="her-card reveal">
+          <div class="her-photo">
+            <img src="https://images.unsplash.com/photo-1554907984-15263bfd63bd?w=800&h=500&q=75&auto=format&fit=crop" alt="Gallery wall with framed artworks in a museum" width="800" height="500" loading="lazy"/>
+          </div>
+          <div class="her-body">
+            <h3>Immersive Museum Exhibits</h3>
+            <p>Interactive displays, directional audio, ambient soundscapes and touch-driven storytelling that help museums engage every kind of visitor, designed to serve the exhibit, respect the artefacts and stay simple for staff to operate.</p>
+            <a href="https://wa.me/919511114676?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20Immersive%20Museum%20Exhibits." target="_blank" rel="noopener" class="link-arrow">Explore More <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ INDUSTRIES ═══════════ -->
+  <section class="industries on-dark" id="industries">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Who We Serve</span>
+        <h2 style="color:#fff;">Industries We Serve</h2>
+        <p>Every space has different requirements, we study your environment, objectives and budget before recommending a solution.</p>
+      </div>
+      <div class="ind-grid">
+        <article class="ind-card reveal">
+          <span class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="14" rx="1"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></span>
+          <h3>Corporate &amp; Business</h3>
+          <p>Conference-room displays, video-conferencing systems and wireless presentation solutions that improve meetings and collaboration.</p>
+        </article>
+        <article class="ind-card reveal">
+          <span class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span>
+          <h3>Educational Institutions</h3>
+          <p>Smart classrooms and training rooms with interactive displays, projectors, lecture-capture and hybrid-learning technology.</p>
+        </article>
+        <article class="ind-card reveal">
+          <span class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20M4 20V10l8-6 8 6v10M9 20v-6h6v6"/></svg></span>
+          <h3>Hospitality &amp; Auditoriums</h3>
+          <p>Complete audio, projection, lighting, stage and control-system solutions for auditoriums, halls and modern workspaces.</p>
+        </article>
+        <article class="ind-card reveal">
+          <span class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-4h6v4M9 12h.01M15 12h.01M12 12h.01"/></svg></span>
+          <h3>Museums &amp; Cultural Spaces</h3>
+          <p>Immersive exhibits, projection mapping and light &amp; sound shows for museums, monuments and heritage sites.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ WHY VIVEINS ═══════════ -->
+  <section class="why" id="why-viveins">
+    <div class="container">
+      <div class="sec-head center reveal">
+        <span class="eyebrow" style="justify-content:center;">Why Viveins Technologies</span>
+        <h2>Why Clients Choose Viveins</h2>
+        <p>Four pillars behind every project we deliver.</p>
+      </div>
+      <div class="why-grid">
+        <article class="why-card reveal">
+          <span class="why-num">01</span>
+          <span class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4.5 4.5 0 0 0-6 6L3 18v3h3l5.7-5.7a4.5 4.5 0 0 0 6-6L15 12l-3-3z"/></svg></span>
+          <h3>Complete Project Execution</h3>
+          <p>Consultation, planning, product selection, installation, configuration, testing and support, one accountable team from first call to final handover.</p>
+        </article>
+        <article class="why-card reveal">
+          <span class="why-num">02</span>
+          <span class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg></span>
+          <h3>Customized Solutions</h3>
+          <p>Every system is designed around your space, operational needs and budget, never an off-the-shelf fit.</p>
+        </article>
+        <article class="why-card reveal">
+          <span class="why-num">03</span>
+          <span class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12c0 5-4 9-9 9s-9-4-9-9 4-9 9-9c1.5 0 2.9.4 4.2 1"/><path d="M9 12l2 2 5-6"/></svg></span>
+          <h3>Professional Installation</h3>
+          <p>Organized cabling, proper equipment placement, accurate configuration and a clean final setup, every time.</p>
+        </article>
+        <article class="why-card reveal">
+          <span class="why-num">04</span>
+          <span class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></span>
+          <h3>Dependable Support</h3>
+          <p>We remain available after installation for maintenance, technical assistance and system upgrades whenever you need us.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ CASE STUDIES ═══════════ -->
+  <section class="cases" id="case-studies">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Our Work</span>
+        <h2>Case Studies</h2>
+        <p>A closer look at how we plan, integrate and deliver AV projects, available as detailed PDF case studies.</p>
+      </div>
+      <div class="case-grid">
+        <a class="case-card reveal" href="https://drive.google.com/file/d/1AmCNmoXdVVJplmON7daPaKPEcmRxRAZ3/view" target="_blank" rel="noopener">
+          <span class="case-num">01</span>
+          <h3>Case Study 01</h3>
+          <p>Project scope, system design and delivery, documented end to end.</p>
+          <span class="case-open">View Case Study <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </a>
+        <a class="case-card reveal" href="https://drive.google.com/file/d/1eJ2HOEiBaK8P-E6MMwK0W-4Wc0M5_ThE/view" target="_blank" rel="noopener">
+          <span class="case-num">02</span>
+          <h3>Case Study 02</h3>
+          <p>Project scope, system design and delivery, documented end to end.</p>
+          <span class="case-open">View Case Study <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </a>
+        <a class="case-card reveal" href="https://drive.google.com/file/d/1AmCNmoXdVVJplmON7daPaKPEcmRxRAZ3/view" target="_blank" rel="noopener">
+          <span class="case-num">03</span>
+          <h3>Case Study 03</h3>
+          <p>Project scope, system design and delivery, documented end to end.</p>
+          <span class="case-open">View Case Study <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ OUR PRESENCE ═══════════ -->
+  <section class="presence on-dark" id="presence">
+    <div class="container">
+      <div class="presence-grid">
+        <div class="presence-map reveal" aria-hidden="true">
+          <svg viewBox="0 0 379 422" role="img" aria-label="Map of India showing Viveins presence in Delhi, Mumbai, Pune, Hyderabad, Bengaluru and North East India">
+            <defs>
+              <radialGradient id="pinGrad" cx="35%" cy="35%" r="80%">
+                <stop offset="0%" stop-color="#D80E80"/>
+                <stop offset="100%" stop-color="#5B21C9"/>
+              </radialGradient>
+            </defs>
+            <path class="map-body" d="M124.4 27.8L126.5 28.2L128.1 27.3L129.3 28.1L129.6 26.8L132.4 26.9L133.4 24.6L140.4 22.6L141.1 21.2L143.2 22.0L147.2 21.0L148.4 21.3L149.0 22.9L150.0 22.3L151.7 25.7L153.4 26.6L155.3 26.2L154.9 26.9L156.0 28.6L157.9 26.6L160.5 27.9L158.9 29.6L158.9 31.6L157.8 32.8L157.9 35.8L156.3 38.3L152.7 39.4L152.8 41.4L149.2 41.7L150.4 44.6L149.0 45.3L147.9 47.8L142.8 47.4L141.5 48.2L144.0 52.8L141.7 53.0L142.1 56.2L144.2 58.7L148.0 58.8L147.0 61.4L149.8 64.6L149.7 65.7L148.0 67.9L146.3 67.4L144.5 68.4L144.1 69.9L142.5 70.3L140.1 68.4L139.6 65.5L135.3 67.7L136.5 71.2L140.1 75.0L139.2 77.5L141.0 80.2L139.4 81.5L140.3 82.4L140.1 84.2L141.6 84.5L144.1 82.2L148.2 88.1L150.4 89.2L152.3 88.3L153.7 88.8L154.5 90.0L158.3 91.6L158.1 94.0L162.9 95.5L168.2 98.5L167.8 99.4L166.7 98.9L164.7 101.8L159.9 105.3L160.4 107.3L158.4 109.4L159.1 112.6L157.2 114.0L156.3 117.8L161.8 121.4L161.6 119.9L162.4 119.6L168.2 123.5L170.4 124.0L171.8 127.1L173.4 126.7L173.8 127.8L178.9 130.8L181.2 129.9L185.9 133.2L189.1 132.6L189.5 135.6L195.1 136.3L196.7 137.9L197.9 136.8L197.6 135.9L200.4 136.1L203.6 137.7L203.3 136.4L205.6 136.6L207.1 135.4L208.9 137.2L213.0 137.8L213.8 139.4L213.3 141.8L217.3 142.9L218.0 144.4L220.1 144.2L220.4 145.7L221.9 145.9L225.6 144.1L226.8 145.0L226.9 147.1L228.4 148.2L230.5 146.9L232.9 148.0L234.4 147.5L239.3 150.2L243.6 148.0L243.8 149.8L246.9 151.2L248.5 150.0L250.2 150.8L253.8 149.3L255.3 151.0L256.3 150.1L257.5 145.9L256.8 142.6L255.0 140.8L256.0 137.9L255.7 135.7L257.6 131.7L256.6 130.0L260.3 129.1L263.1 127.3L265.6 128.7L266.2 130.8L264.7 134.7L266.6 138.5L264.5 140.5L266.0 140.9L266.1 143.2L266.7 142.5L269.3 145.0L272.4 144.3L275.7 145.4L275.4 146.1L278.4 146.4L282.5 145.5L284.5 143.7L289.1 145.5L301.2 145.0L303.7 143.5L305.8 144.5L306.6 142.9L305.5 141.3L305.5 138.9L306.6 138.5L305.3 135.9L300.7 135.9L299.6 133.9L300.6 132.1L304.1 132.7L308.1 130.4L309.0 131.6L310.8 131.7L314.2 129.2L313.5 126.9L316.6 126.2L322.9 120.0L326.4 119.9L333.3 116.3L334.6 115.0L333.7 113.3L337.8 111.4L338.7 111.1L340.1 113.2L342.8 113.7L342.4 113.0L345.8 114.5L347.9 112.8L348.8 113.7L348.8 112.8L350.1 112.2L351.3 112.6L352.6 110.7L355.6 110.2L358.7 112.8L357.3 114.9L359.1 113.9L362.9 119.0L360.0 122.1L361.2 123.1L361.1 121.6L363.9 120.6L366.5 124.1L369.0 124.0L371.9 126.1L371.3 128.1L372.4 128.7L372.0 130.5L370.5 130.2L366.1 134.2L366.2 136.3L369.5 140.5L369.2 141.2L365.8 139.9L366.0 138.9L363.8 137.4L361.5 138.5L357.8 138.6L347.9 146.4L344.4 147.6L343.3 149.8L344.1 150.8L344.0 154.5L344.8 154.9L342.6 157.3L343.1 159.1L341.2 161.8L337.9 164.1L337.2 166.5L339.3 167.7L338.9 170.3L335.0 176.4L332.0 185.0L329.1 183.6L327.6 183.9L327.0 182.8L323.8 183.7L322.7 181.9L321.6 181.8L323.0 187.1L322.0 191.7L322.3 194.6L321.2 196.3L319.1 195.8L318.9 202.8L320.1 206.4L319.4 207.5L318.0 207.3L317.6 210.1L316.9 209.5L316.4 210.7L315.8 209.1L313.8 207.8L313.5 209.8L312.6 210.2L311.5 200.2L309.7 197.3L309.4 193.2L310.1 193.2L308.6 186.7L307.7 187.6L306.9 186.5L305.7 187.7L304.5 186.5L304.7 190.0L302.1 192.4L303.0 195.2L300.3 197.3L297.7 192.6L297.8 195.5L296.9 195.0L296.6 191.6L294.6 188.2L295.5 183.9L296.4 182.9L297.3 183.2L297.3 181.5L299.9 181.9L300.9 179.8L302.1 181.0L301.9 179.6L303.8 181.1L304.1 178.4L307.1 177.3L307.0 175.8L307.9 175.9L308.8 173.0L308.0 170.8L311.3 171.1L310.4 169.0L305.8 166.9L300.5 167.7L300.2 167.0L298.5 167.6L295.9 166.6L285.6 167.5L278.1 165.4L278.6 161.1L277.8 158.4L278.7 156.6L277.9 156.6L278.5 156.2L276.1 152.7L275.0 153.8L275.7 155.1L274.8 156.3L272.9 155.3L272.1 155.8L269.6 154.0L268.7 150.5L267.1 149.7L266.4 150.4L268.3 152.6L266.4 152.0L265.7 152.8L265.1 151.7L263.5 152.4L264.5 151.2L260.1 147.4L259.3 149.4L261.2 149.7L261.7 151.0L260.9 150.8L259.5 152.9L257.4 153.9L256.5 158.4L258.5 158.5L261.9 162.5L263.9 163.0L265.3 162.3L265.6 164.5L267.7 165.8L266.7 167.2L260.7 166.6L260.1 170.1L259.3 171.2L258.0 169.9L256.9 170.3L257.3 171.3L255.3 173.9L259.3 177.8L264.3 179.1L263.9 181.3L264.8 183.2L262.3 184.8L262.1 187.6L264.4 189.9L265.1 189.7L264.1 193.0L267.6 193.5L265.7 196.3L267.2 198.5L266.5 199.7L266.9 202.4L267.6 206.1L268.9 207.8L268.1 208.5L268.4 210.8L267.9 210.2L267.5 211.3L268.9 214.8L266.6 214.9L265.9 212.9L265.8 215.1L265.4 214.2L264.2 214.3L263.9 211.9L264.9 209.7L264.6 208.9L263.7 209.0L264.1 209.9L263.1 208.9L262.1 212.4L261.6 210.6L260.9 211.3L260.8 215.2L260.5 213.7L260.1 215.4L260.2 213.7L258.6 213.5L259.0 215.6L258.2 215.8L257.1 210.5L257.8 207.9L255.4 206.9L257.5 208.5L252.7 214.0L246.9 215.6L247.4 216.0L243.8 216.2L241.6 218.9L240.5 221.6L242.4 225.8L241.0 226.5L242.6 226.5L242.2 227.5L243.5 227.2L239.8 230.1L239.3 229.7L239.0 231.4L240.0 231.8L238.6 233.0L240.2 232.2L236.7 234.4L235.5 236.9L234.1 237.1L234.8 237.6L224.5 241.0L225.1 240.9L218.2 245.1L218.8 245.4L214.6 248.9L215.1 248.9L209.1 256.7L209.7 256.5L206.5 259.2L206.9 259.8L199.7 263.6L195.5 269.5L187.8 273.6L184.1 276.9L183.4 279.1L184.8 279.8L184.5 277.6L184.9 278.7L184.6 281.0L183.7 281.4L184.9 281.2L184.2 282.9L183.5 281.6L184.1 283.4L176.8 286.8L176.8 286.0L176.7 286.8L174.7 285.9L171.2 287.0L169.7 291.3L167.1 294.9L166.5 294.3L166.9 294.8L165.7 295.0L165.4 293.1L163.8 292.4L158.6 295.4L155.9 303.5L157.7 309.9L157.1 310.3L157.8 310.2L156.6 314.5L156.9 317.1L158.6 320.9L159.7 327.6L157.3 338.7L153.8 344.4L152.3 349.4L153.3 353.6L152.4 353.3L153.3 353.7L153.6 355.8L153.9 367.8L152.8 368.3L150.8 367.0L146.5 368.5L145.8 370.0L146.2 371.4L142.8 375.9L141.6 378.9L142.4 380.9L145.2 381.7L141.1 382.1L133.7 385.2L132.0 388.7L132.9 388.4L131.3 393.9L124.8 398.0L121.9 397.3L118.1 394.3L112.3 386.8L113.8 385.6L112.2 386.4L111.6 383.2L110.8 382.1L111.2 383.6L109.9 380.6L108.8 371.5L108.4 372.3L108.0 369.3L107.4 369.5L106.3 364.6L104.4 361.5L104.9 360.9L104.3 361.4L103.8 356.8L102.4 353.6L100.7 352.0L99.7 348.9L96.9 345.4L95.5 344.9L90.8 333.6L89.2 326.8L88.8 322.9L89.5 322.8L88.6 322.5L85.8 314.2L86.9 314.7L85.8 314.1L84.0 308.3L82.0 307.5L82.5 306.4L81.9 306.6L79.4 303.3L79.9 302.3L79.2 300.0L77.8 298.9L79.1 298.7L77.8 298.3L78.3 297.6L77.6 297.8L77.2 296.5L77.9 295.6L77.2 296.1L75.9 292.7L73.7 290.2L72.8 286.4L73.3 285.9L72.6 285.8L73.9 285.4L72.6 285.6L72.0 284.0L72.2 283.4L72.5 284.5L73.5 284.2L72.0 282.9L73.0 282.6L72.2 282.6L71.8 281.1L72.3 279.8L71.7 280.0L71.5 278.1L72.1 277.9L71.2 276.8L71.6 277.5L72.1 276.9L70.4 273.4L71.7 273.5L70.2 272.1L70.7 271.6L69.8 269.9L70.7 269.5L69.7 269.2L69.6 266.2L68.4 264.6L69.1 264.1L68.3 264.1L67.2 261.0L67.6 260.2L69.3 262.0L69.1 259.6L68.4 260.4L67.0 259.2L66.8 256.6L68.1 257.6L66.2 254.6L66.4 253.1L67.2 252.8L68.2 254.3L67.9 252.3L66.9 251.8L68.8 250.2L68.0 250.4L67.8 247.9L67.5 249.9L65.6 251.9L65.9 248.0L65.3 248.4L66.0 247.0L65.3 247.8L65.3 246.3L66.9 246.5L65.2 245.7L64.8 244.2L66.6 243.4L64.6 243.3L63.7 239.2L63.8 237.8L64.8 237.7L64.9 233.0L66.8 229.8L66.1 226.9L67.1 226.7L65.8 226.2L65.3 224.5L66.1 223.8L65.0 224.4L64.7 223.4L64.6 222.7L66.1 223.0L65.9 222.2L64.4 222.2L65.4 221.0L63.5 222.3L63.5 220.6L64.8 220.8L63.0 219.4L64.1 218.6L64.3 217.2L65.0 217.4L63.6 217.4L64.0 216.7L65.9 214.4L67.1 214.3L62.2 214.5L63.3 211.2L64.9 210.3L62.2 211.3L61.9 210.2L62.8 207.2L65.0 207.6L66.9 206.3L64.9 206.8L62.2 205.8L60.9 207.2L60.3 205.4L59.6 205.8L59.3 208.5L57.8 209.6L58.6 210.9L57.6 210.5L58.6 211.1L58.6 212.5L58.2 211.8L57.6 212.5L59.4 215.0L56.6 219.2L56.9 220.7L49.5 224.0L48.6 225.2L40.8 227.6L32.5 222.7L17.3 205.8L19.0 203.5L18.5 204.7L20.5 204.3L20.1 205.7L20.9 206.5L24.1 205.4L24.5 204.2L25.3 205.6L26.4 205.6L27.2 203.5L28.2 204.5L30.4 202.6L32.8 202.6L36.2 196.8L34.2 197.2L33.3 195.7L33.4 197.1L32.2 196.5L31.8 197.7L29.1 197.6L27.0 200.0L23.7 199.4L22.5 198.9L22.6 198.0L22.5 198.9L20.5 198.6L13.5 194.1L14.6 194.7L12.9 193.3L14.1 192.3L12.8 191.7L12.0 189.7L11.2 189.9L11.5 189.0L10.9 189.5L12.5 186.8L15.7 184.5L12.0 186.3L11.0 186.5L11.0 185.3L10.0 188.6L7.8 188.1L10.0 186.6L8.9 186.5L8.7 187.4L8.0 186.6L8.2 185.1L10.1 183.3L15.0 183.3L15.7 178.7L16.4 180.0L17.4 178.8L18.1 179.9L25.5 179.0L27.2 180.6L30.9 180.6L32.0 178.9L37.6 177.2L37.7 179.5L39.5 180.0L44.5 177.5L43.0 176.9L42.9 174.9L44.3 173.6L41.7 167.4L38.9 164.0L38.8 159.9L33.9 159.8L31.8 156.7L32.8 148.5L28.4 147.9L24.5 145.9L25.4 139.9L30.9 134.8L32.2 131.5L35.2 128.7L37.9 128.8L39.8 132.4L41.5 132.9L45.6 131.1L54.3 129.4L54.6 127.2L58.1 123.6L60.4 118.5L67.3 115.0L71.5 107.7L73.0 102.6L78.1 101.0L80.1 99.2L79.0 97.0L80.2 95.9L79.7 95.3L81.4 94.8L85.7 89.2L89.2 87.4L89.1 86.7L87.6 87.3L86.9 86.6L87.4 83.5L88.7 82.6L86.6 78.7L88.1 76.4L90.7 75.4L91.5 74.1L96.0 73.6L97.6 71.8L97.0 70.2L94.2 68.4L89.0 68.2L88.5 66.6L89.3 63.5L88.4 64.7L85.1 64.5L79.6 60.9L78.2 61.2L75.9 60.1L75.4 49.3L74.3 47.6L74.1 44.1L73.0 42.8L73.7 40.2L76.2 40.3L77.1 37.5L81.0 35.8L82.1 32.7L77.4 31.4L76.7 29.6L77.8 27.3L73.1 27.2L72.1 25.4L69.6 24.6L70.5 23.7L70.2 22.7L62.6 22.9L61.9 22.2L62.4 17.7L67.6 14.4L68.9 12.6L68.8 11.4L72.7 10.6L78.8 11.1L76.4 8.4L81.0 9.6L85.8 7.3L87.5 7.7L89.1 6.1L89.7 6.8L91.0 6.5L91.7 8.2L94.8 6.9L98.2 7.9L98.7 11.0L102.1 10.7L104.7 12.7L105.8 14.9L114.4 18.7L115.9 22.8L119.0 24.4L122.3 24.6L123.8 25.6L124.4 27.8ZM328.1 409.2L329.6 412.4L329.1 412.5L329.5 413.0L328.9 413.8L329.0 415.1L328.4 415.0L328.1 415.8L327.6 414.1L325.9 412.3L325.8 410.8L326.1 410.0L328.1 409.2ZM326.7 406.8L327.2 407.6L325.8 409.1L325.6 407.5L326.7 406.8ZM322.3 398.7L323.3 400.7L321.5 400.0L321.5 399.1L322.3 398.7ZM324.6 398.6L324.9 400.0L324.0 399.2L324.6 398.6ZM324.2 395.8L323.9 396.9L324.5 398.5L323.9 399.0L323.7 398.4L324.4 398.1L323.7 398.3L323.3 396.7L324.2 395.8ZM68.8 395.2L68.2 395.3L69.0 394.6L68.8 395.2ZM319.2 394.2L319.2 395.3L320.1 396.3L318.7 395.4L319.2 394.2ZM325.4 391.8L325.4 393.4L325.3 391.3L325.4 391.8ZM314.8 382.1L315.4 383.6L314.3 383.9L314.1 382.6L314.8 382.1ZM311.9 360.1L312.8 361.7L312.8 362.9L311.9 364.0L312.3 364.3L311.6 365.1L309.9 364.9L309.9 361.3L311.9 360.1ZM313.3 351.8L313.7 352.8L313.2 353.0L313.8 353.5L312.7 353.9L312.8 351.9L313.3 351.8ZM308.0 350.5L308.6 350.7L308.5 351.5L307.9 351.4L308.0 350.5ZM317.2 344.5L317.7 344.7L318.1 346.6L317.7 345.3L317.4 345.7L316.7 345.1L317.2 344.5ZM317.9 343.0L318.2 344.4L317.7 343.9L317.9 343.0ZM318.5 342.1L318.5 343.9L318.1 343.3L318.5 342.1ZM313.9 341.9L313.9 342.8L314.6 342.6L314.4 344.2L313.9 344.3L315.0 344.3L314.3 344.6L314.7 345.0L314.1 346.0L314.3 346.4L314.9 345.8L315.1 346.4L314.6 349.1L313.4 349.7L313.8 350.1L314.2 349.3L314.6 349.6L314.0 352.1L312.9 350.9L313.2 350.0L312.7 349.9L312.6 348.9L312.2 349.1L312.0 347.1L311.6 347.1L312.2 345.8L312.7 347.0L312.9 343.6L313.9 341.9ZM316.9 341.2L316.7 341.9L316.4 341.1L316.9 341.2ZM315.4 340.9L316.2 341.1L316.2 342.4L314.7 344.2L314.9 341.8L314.4 341.6L314.8 340.8L315.4 340.9ZM316.4 332.7L317.4 335.4L316.9 336.7L317.3 338.4L316.6 339.5L316.4 338.8L315.7 338.6L316.1 339.4L315.2 338.8L316.3 340.6L314.4 341.0L313.9 340.5L313.7 336.7L314.5 336.0L314.9 336.4L315.0 335.5L314.3 335.9L314.2 333.9L316.4 332.7ZM313.9 331.6L314.2 333.0L313.5 334.4L313.3 333.4L313.9 331.6ZM318.1 324.1L317.7 325.7L318.4 325.9L318.7 327.0L317.1 326.8L318.5 327.9L318.1 330.7L317.2 331.4L316.9 330.2L316.8 330.8L316.3 330.3L316.9 331.9L316.5 332.2L316.4 331.6L316.0 333.1L315.2 332.9L315.5 331.3L315.0 331.3L315.0 330.3L315.8 329.6L315.3 329.4L315.8 328.3L315.4 327.3L316.1 326.3L315.7 326.1L316.7 324.3L318.1 324.1ZM262.1 214.9L262.5 215.3L262.0 215.7L261.5 215.3L261.7 214.6L262.1 214.9ZM259.0 213.9L259.6 214.6L259.1 215.2L259.0 213.9ZM264.2 214.4L265.0 215.5L264.0 215.4L263.9 213.8L264.2 214.4ZM257.8 214.4L257.8 215.4L257.7 213.7L257.8 214.4ZM262.1 213.6L262.6 215.1L261.8 214.5L261.6 213.8L262.1 213.6ZM262.0 212.5L262.3 213.5L261.7 213.7L262.0 212.5ZM257.3 212.8L257.0 214.9L255.8 214.8L256.9 211.6L257.3 212.8ZM263.2 211.0L263.1 212.8L262.6 211.8L263.2 211.0ZM263.4 209.7L264.1 209.9L263.6 210.7L263.0 210.5L263.4 209.7ZM256.0 211.0L256.2 209.8L256.9 209.5L256.0 211.0Z"/>
+            <line class="map-link" x1="168.1" y1="144.2" x2="120.5" y2="120.7"/><line class="map-link" x1="168.1" y1="144.2" x2="66.5" y2="249.4"/><line class="map-link" x1="168.1" y1="144.2" x2="78.7" y2="256.9"/><line class="map-link" x1="168.1" y1="144.2" x2="136.5" y2="272.3"/><line class="map-link" x1="168.1" y1="144.2" x2="125.3" y2="331.9"/><line class="map-link" x1="168.1" y1="144.2" x2="301.8" y2="154.0"/>
+            <g>
+              <circle class="map-pin-ring" cx="168.1" cy="144.2" r="6"/>
+              <circle class="map-pin-dot" cx="168.1" cy="144.2" r="6"/>
+              <text class="map-label" x="178.1" y="149.0" text-anchor="start">Lucknow (HQ)</text>
+            </g>
+            <g>
+              <circle class="map-pin-ring" cx="120.5" cy="120.7" r="6"/>
+              <circle class="map-pin-dot" cx="120.5" cy="120.7" r="5.5"/>
+              <text class="map-label" x="130.5" y="117.0" text-anchor="start">Delhi NCR</text>
+            </g>
+            <g>
+              <circle class="map-pin-ring" cx="66.5" cy="249.4" r="6"/>
+              <circle class="map-pin-dot" cx="66.5" cy="249.4" r="5.5"/>
+              <text class="map-label" x="57.5" y="245.0" text-anchor="end">Mumbai</text>
+            </g>
+            <g>
+              <circle class="map-pin-ring" cx="78.7" cy="256.9" r="6"/>
+              <circle class="map-pin-dot" cx="78.7" cy="256.9" r="5.5"/>
+              <text class="map-label" x="88.7" y="262.0" text-anchor="start">Pune</text>
+            </g>
+            <g>
+              <circle class="map-pin-ring" cx="136.5" cy="272.3" r="6"/>
+              <circle class="map-pin-dot" cx="136.5" cy="272.3" r="5.5"/>
+              <text class="map-label" x="146.5" y="277.0" text-anchor="start">Hyderabad</text>
+            </g>
+            <g>
+              <circle class="map-pin-ring" cx="125.3" cy="331.9" r="6"/>
+              <circle class="map-pin-dot" cx="125.3" cy="331.9" r="5.5"/>
+              <text class="map-label" x="135.3" y="337.0" text-anchor="start">Bengaluru</text>
+            </g>
+            <g>
+              <circle class="map-pin-ring" cx="301.8" cy="154.0" r="6"/>
+              <circle class="map-pin-dot" cx="301.8" cy="154.0" r="5.5"/>
+              <text class="map-label" x="311.8" y="150.0" text-anchor="start">North East</text>
+            </g>
+          </svg>
+          <p class="presence-note">India boundary derived from DataMeet community maps (CC-BY-SA 2.5 IN)</p>
+        </div>
+        <div class="reveal">
+          <div class="sec-head" style="margin-bottom:0;">
+            <span class="eyebrow">Our Presence</span>
+            <h2>Serving Projects<br/>Across India</h2>
+            <p>From our base in Lucknow, our teams plan, deliver and support audiovisual projects across the country, with an active presence in India's major metros and the North East.</p>
+          </div>
+          <div class="city-grid">
+            <div class="city-card city-card--hq"><span class="city-dot" aria-hidden="true"></span><div><strong>Lucknow</strong><span>Headquarters · Uttar Pradesh</span></div></div>
+            <div class="city-card"><span class="city-dot" aria-hidden="true"></span><div><strong>Delhi NCR</strong><span>North India</span></div></div>
+            <div class="city-card"><span class="city-dot" aria-hidden="true"></span><div><strong>Mumbai</strong><span>West India</span></div></div>
+            <div class="city-card"><span class="city-dot" aria-hidden="true"></span><div><strong>Pune</strong><span>West India</span></div></div>
+            <div class="city-card"><span class="city-dot" aria-hidden="true"></span><div><strong>Hyderabad</strong><span>South India</span></div></div>
+            <div class="city-card"><span class="city-dot" aria-hidden="true"></span><div><strong>Bengaluru</strong><span>South India</span></div></div>
+            <div class="city-card"><span class="city-dot" aria-hidden="true"></span><div><strong>North East India</strong><span>Guwahati &amp; beyond</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ PROCESS ═══════════ -->
+  <section class="process" id="booking">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow">How It Works</span>
+        <h2>From Consultation to Installation</h2>
+        <p>Planning a new audiovisual project or upgrading an existing system? Here is how we work with you.</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal">
+          <span class="step-num" aria-hidden="true">1</span>
+          <h3>Share your requirements</h3>
+          <p>Tell us about your space, goals and budget.</p>
+        </div>
+        <div class="step reveal">
+          <span class="step-num" aria-hidden="true">2</span>
+          <h3>Consultation &amp; assessment</h3>
+          <p>We discuss your objectives and study your environment.</p>
+        </div>
+        <div class="step reveal">
+          <span class="step-num" aria-hidden="true">3</span>
+          <h3>Custom proposal</h3>
+          <p>Receive a tailored system design and quote.</p>
+        </div>
+        <div class="step reveal">
+          <span class="step-num" aria-hidden="true">4</span>
+          <h3>Installation &amp; support</h3>
+          <p>Professional install, testing, training and ongoing support.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ CTA BAND ═══════════ -->
+  <section class="cta-band on-dark" aria-label="Request a consultation">
+    <div class="container">
+      <div class="cta-inner reveal">
+        <span class="eyebrow" style="justify-content:center;">Let's build a better AV experience</span>
+        <h2>Better Yet, Meet Us in Person</h2>
+        <p>We value personal communication and would be pleased to understand your requirements in detail. Reach out and our team will help you plan the right AV system for your space.</p>
+        <div class="cta-actions">
+          <a href="https://wa.me/919511114676?text=Hi%2C%20I%27d%20like%20to%20request%20a%20consultation%20for%20Viveins%20Technologies." target="_blank" rel="noopener" class="btn btn-white">Request a Consultation</a>
+          <a href="mailto:info@viveins.com" class="btn btn-on-dark">Email Us</a>
+        </div>
+        <div class="cta-tags">
+          <span>Corporate</span><span>Education</span><span>Hospitality</span><span>Auditoriums</span><span>Museums &amp; Heritage</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ INSIGHTS ═══════════ -->
+  <section class="insights" id="insights">
+    <div class="container">
+      <div class="sec-head center reveal">
+        <span class="eyebrow" style="justify-content:center;">Insights</span>
+        <h2>Ideas &amp; Guides on AV Technology</h2>
+        <p>Practical thinking on audiovisual systems, from museum experiences to meeting rooms.</p>
+      </div>
+      <div class="post-grid">
+        <a class="post-card reveal" href="blog.html#immersive-museum-exhibits">
+          <div class="post-photo"><img src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=640&h=400&q=70&auto=format&fit=crop" alt="Modern museum gallery interior" width="640" height="400" loading="lazy"/></div>
+          <div class="post-body">
+            <span class="post-chip">Museums</span>
+            <h3>How Immersive AV Is Transforming Museum Exhibits</h3>
+            <p>From passive display cases to walk-through stories, what immersive AV really changes for visitors.</p>
+            <span class="post-read">Read Article <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+          </div>
+        </a>
+        <a class="post-card reveal" href="blog.html#projection-mapping-guide">
+          <div class="post-photo"><img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=640&h=400&q=70&auto=format&fit=crop" alt="Projector beam in a dark room" width="640" height="400" loading="lazy"/></div>
+          <div class="post-body">
+            <span class="post-chip">Heritage</span>
+            <h3>Projection Mapping on Heritage Architecture: A Practical Guide</h3>
+            <p>What it takes to turn a monument façade into a canvas, planning, projectors, content and care.</p>
+            <span class="post-read">Read Article <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+          </div>
+        </a>
+        <a class="post-card reveal" href="blog.html#light-and-sound-shows">
+          <div class="post-photo"><img src="https://images.unsplash.com/photo-1507924538820-ede94a04019d?w=640&h=400&q=70&auto=format&fit=crop" alt="Historic theatre auditorium with stage curtain" width="640" height="400" loading="lazy"/></div>
+          <div class="post-body">
+            <span class="post-chip">Heritage</span>
+            <h3>Designing Light &amp; Sound Shows for Archaeological Sites</h3>
+            <p>Engineering nightly storytelling at forts and monuments, audio zones, lighting and show control.</p>
+            <span class="post-read">Read Article <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+          </div>
+        </a>
+        <a class="post-card reveal" href="blog.html#av-museum-operations">
+          <div class="post-photo"><img src="https://images.unsplash.com/photo-1554907984-15263bfd63bd?w=640&h=400&q=70&auto=format&fit=crop" alt="Classic gallery wall with framed paintings" width="640" height="400" loading="lazy"/></div>
+          <div class="post-body">
+            <span class="post-chip">Museums</span>
+            <h3>4 Ways AV Technology Improves Museum Operations</h3>
+            <p>Beyond exhibits: wayfinding, accessibility, communication and insight for cultural institutions.</p>
+            <span class="post-read">Read Article <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+          </div>
+        </a>
+        <a class="post-card reveal" href="blog.html#video-conferencing-rooms">
+          <div class="post-photo"><img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=640&h=400&q=70&auto=format&fit=crop" alt="Presenter speaking to a seated audience in a meeting room" width="640" height="400" loading="lazy"/></div>
+          <div class="post-body">
+            <span class="post-chip">Corporate</span>
+            <h3>Choosing the Right Video Conferencing Setup for Your Meeting Rooms</h3>
+            <p>Cameras, microphones, DSP and control, matching the system to the room, not the other way round.</p>
+            <span class="post-read">Read Article <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+          </div>
+        </a>
+        <a class="post-card reveal" href="blog.html#smart-classroom-av">
+          <div class="post-photo"><img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=640&h=400&q=70&auto=format&fit=crop" alt="Classroom desk with books and learning blocks" width="640" height="400" loading="lazy"/></div>
+          <div class="post-body">
+            <span class="post-chip">Education</span>
+            <h3>Smart Classroom AV: What Actually Matters for Hybrid Learning</h3>
+            <p>Displays, audio and capture that keep in-room and remote students equally engaged.</p>
+            <span class="post-read">Read Article <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+          </div>
+        </a>
+        <a class="post-card reveal" href="blog.html#auditorium-sound">
+          <div class="post-photo"><img src="https://images.unsplash.com/photo-1519452575417-564c1401ecc0?w=640&h=400&q=70&auto=format&fit=crop" alt="Rows of seats in a modern auditorium" width="640" height="400" loading="lazy"/></div>
+          <div class="post-body">
+            <span class="post-chip">Auditoriums</span>
+            <h3>Auditorium Sound: Getting Speech Intelligibility Right</h3>
+            <p>Why great auditorium audio starts with acoustics and coverage, not just bigger speakers.</p>
+            <span class="post-read">Read Article <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+          </div>
+        </a>
+        <a class="post-card reveal" href="blog.html#digital-signage-strategy">
+          <div class="post-photo"><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=640&h=400&q=70&auto=format&fit=crop" alt="Modern office corridor with glass partitions" width="640" height="400" loading="lazy"/></div>
+          <div class="post-body">
+            <span class="post-chip">Signage</span>
+            <h3>Digital Signage Content Strategy: Screens People Actually Read</h3>
+            <p>Placement, content cadence and management, making signage earn its place on the wall.</p>
+            <span class="post-read">Read Article <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ CONTACT ═══════════ -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Get in Touch</span>
+        <h2>Contact Us</h2>
+        <p>Tell us about your space, our team will help you select and implement the right technology.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="reveal">
+          <div class="contact-list">
+            <div class="contact-row">
+              <span class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+              <div>
+                <h3>Our Office</h3>
+                <p>192, Sudha Petrol Pump Road,<br/>Vijayant Khand, Gomti Nagar,<br/>Lucknow, Uttar Pradesh 226010</p>
+                <p><a href="https://maps.app.goo.gl/nqM5txmWnPv7CsiL7" target="_blank" rel="noopener">Get Directions</a></p>
+              </div>
+            </div>
+            <div class="contact-row">
+              <span class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span>
+              <div>
+                <h3>Business Hours</h3>
+                <p>Monday – Saturday · 9:00 AM – 5:00 PM</p>
+              </div>
+            </div>
+            <div class="contact-row">
+              <span class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+              <div>
+                <h3>Phone &amp; WhatsApp</h3>
+                <p><a href="tel:+919511114676">+91 95111 14676</a></p>
+              </div>
+            </div>
+            <div class="contact-row">
+              <span class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+              <div>
+                <h3>Email</h3>
+                <p><a href="mailto:info@viveins.com">info@viveins.com</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="contact-actions">
+            <a href="https://wa.me/919511114676?text=Hi%2C%20I%27d%20like%20to%20request%20a%20consultation%20for%20Viveins%20Technologies." target="_blank" rel="noopener" class="btn btn-primary">Request a Consultation</a>
+            <a href="mailto:info@viveins.com" class="btn btn-secondary">Email Us</a>
+          </div>
+        </div>
+        <div class="contact-media reveal">
+          <iframe title="Viveins Technologies Private Limited on Google Maps" src="https://www.google.com/maps/embed?origin=mfe&pb=!1m2!2m1!1sViveins%20Technologies%20Private%20Limited%2C%20192%2C%20Sudha%20Petrol%20Pump%20Rd%2C%20Vijayant%20Khand%2C%20Gomti%20Nagar%2C%20Lucknow%2C%20Uttar%20Pradesh%20226010" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-brand-col">
+      <a href="#home" class="footer-logo" aria-label="Viveins Technologies home">
+        <picture>
+          <source srcset="logo-footer.webp" type="image/webp"/>
+          <img src="logo-footer.png" alt="Viveins Technologies" width="467" height="160" loading="lazy"/>
+        </picture>
+      </a>
+      <p class="footer-tagline">See &middot; Hear &middot; Connect &middot; Feel</p>
+      <p class="footer-blurb">Reliable, innovative audiovisual solutions for businesses, educational institutions, hospitality venues, auditoriums, museums and modern workspaces.</p>
+    </div>
+    <nav class="footer-col" aria-label="Footer services and solutions">
+      <h4>What We Do</h4>
+      <ul>
+        <li><a href="#services">Our Services</a></li>
+        <li><a href="#solutions">Corporate AV</a></li>
+        <li><a href="#solutions">Smart Classrooms</a></li>
+        <li><a href="#solutions">Auditoriums</a></li>
+        <li><a href="#heritage">Heritage &amp; Museum AV</a></li>
+        <li><a href="#solutions">Digital Signage &amp; Audio</a></li>
+      </ul>
+    </nav>
+    <nav class="footer-col" aria-label="Footer company">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#industries">Industries We Serve</a></li>
+        <li><a href="#case-studies">Case Studies</a></li>
+        <li><a href="#presence">Our Presence</a></li>
+        <li><a href="#insights">Insights</a></li>
+        <li><a href="https://wa.me/919511114676?text=Hi%2C%20I%27d%20like%20to%20request%20a%20consultation%20for%20Viveins%20Technologies." target="_blank" rel="noopener">Request a Consultation</a></li>
+      </ul>
+    </nav>
+    <div class="footer-col">
+      <h4>Visit Us</h4>
+      <address>
+        192, Sudha Petrol Pump Road,<br/>
+        Vijayant Khand, Gomti Nagar,<br/>
+        Lucknow, Uttar Pradesh 226010<br/><br/>
+        <a href="tel:+919511114676">+91 95111 14676</a><br/>
+        <a href="mailto:info@viveins.com">info@viveins.com</a><br/>
+        Monday – Saturday · 9:00 AM – 5:00 PM
+      </address>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <span>© 2026 Viveins Technologies Pvt. Ltd. All Rights Reserved.</span>
+      <span>Delhi NCR · Mumbai · Pune · Hyderabad · Bengaluru · North East India</span>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp float -->
+<a href="https://wa.me/919511114676?text=Hi%2C%20I%27d%20like%20to%20request%20a%20consultation%20for%20Viveins%20Technologies." target="_blank" rel="noopener" class="wa-float" aria-label="Chat with us on WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<script>
+(function(){
+  var header = document.getElementById('siteHeader');
+  var menuOpenBtn = document.getElementById('menuOpen');
+  var drawer = document.getElementById('mobileDrawer');
+  var backdrop = document.getElementById('drawerBackdrop');
+  var closeTargets = document.querySelectorAll('[data-menu-close]');
+
+  function onScroll(){
+    header.classList.toggle('scrolled', window.scrollY > 8);
+  }
+  onScroll();
+  window.addEventListener('scroll', onScroll, {passive:true});
+
+  function setMenu(open){
+    document.body.classList.toggle('menu-open', open);
+    menuOpenBtn.setAttribute('aria-expanded', String(open));
+    drawer.setAttribute('aria-hidden', String(!open));
+    if (open){
+      backdrop.hidden = false;
+    } else {
+      window.setTimeout(function(){ if(!document.body.classList.contains('menu-open')) backdrop.hidden = true; }, 260);
+    }
+  }
+
+  menuOpenBtn.addEventListener('click', function(){
+    setMenu(!document.body.classList.contains('menu-open'));
+  });
+  closeTargets.forEach(function(el){
+    el.addEventListener('click', function(){ setMenu(false); });
+  });
+  backdrop.addEventListener('click', function(){ setMenu(false); });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') setMenu(false);
+  });
+
+  /* Reveal on scroll, skipped for reduced motion */
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var revealEls = document.querySelectorAll('.reveal');
+  if (reduced || !('IntersectionObserver' in window)){
+    revealEls.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting){
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.08, rootMargin:'0px 0px -24px 0px'});
+    revealEls.forEach(function(el){ io.observe(el); });
+  }
+})();
+</script>
+
+</body>
+</html>
