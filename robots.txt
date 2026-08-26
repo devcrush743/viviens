@@ -1,0 +1,9 @@
+# robots.txt for https://www.viveins.com
+User-agent: *
+Allow: /
+
+# Backup and working files are not published, but be explicit
+Disallow: /*.bak$
+Disallow: /*.bak-*
+
+Sitemap: https://www.viveins.com/sitemap.xml
